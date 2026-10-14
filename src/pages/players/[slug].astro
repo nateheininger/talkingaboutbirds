@@ -1,0 +1,105 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPlayers, type PlayerPage } from '../../lib/players';
+import { url, episodePath, absoluteUrl } from '../../lib/urls';
+import { formatDate } from '../../lib/text';
+import { breadcrumbs } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const players = await getPlayers();
+  return players.map((player) => ({ params: { slug: player.slug }, props: { player } }));
+}
+
+const { player } = Astro.props as { player: PlayerPage };
+const path = `/players/${player.slug}/`;
+const featured = player.mentions.filter((m) => m.where !== 'transcript');
+const transcriptOnly = player.mentions.filter((m) => m.where === 'transcript');
+const latest = player.mentions[0].episode;
+const label = { title: 'In the title', notes: 'In the show notes', transcript: 'In the transcript' };
+---
+
+<Base
+  title={`${player.name} | Talking About Birds, a Cardinals Podcast`}
+  description={`${player.mentions.length} Talking About Birds episodes about ${player.name}, most recently “${latest.title}” (${formatDate(latest.pubDate)}). St. Louis Cardinals analysis from Nate Heininger and Ben Simorka.`}
+  path={path}
+  jsonLd={[
+    breadcrumbs([
+      { name: 'Home', path: '/' },
+      { name: 'Players', path: '/players/' },
+      { name: player.name, path },
+    ]),
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: `${player.name} on Talking About Birds`,
+      url: absoluteUrl(path),
+      about: { '@type': 'Person', name: player.name },
+    },
+  ]}
+>
+  <div class="wrap narrow page">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href={url('/')}>Home</a> / <a href={url('/players/')}>Players</a> / <span aria-current="page">{player.name}</span>
+    </nav>
+    <h1>{player.name}</h1>
+    <p class="lede">
+      {player.name} has come up in {player.mentions.length} episodes of Talking About Birds, most recently{' '}
+      <a href={url(episodePath(latest))}>{latest.title}</a> on {formatDate(latest.pubDate)}.
+    </p>
+
+    {
+      featured.length > 0 && (
+        <section>
+          <h2>Episodes about {player.name}</h2>
+          <ol class="list">
+            {featured.map(({ episode: ep, where }) => (
+              <li>
+                <a href={url(episodePath(ep))}>
+                  #{ep.number}: {ep.title}
+                </a>
+                <span class="muted">
+                  {formatDate(ep.pubDate)} · {label[where]}
+                </span>
+                <p class="summary">{ep.summary}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
+
+    {
+      transcriptOnly.length > 0 && (
+        <section>
+          <h2>Also mentioned in</h2>
+          <ul class="compact">
+            {transcriptOnly.map(({ episode: ep }) => (
+              <li>
+                <a href={url(episodePath(ep) + '#transcript')}>
+                  #{ep.number}: {ep.title}
+                </a>{' '}
+                <span class="muted">({formatDate(ep.pubDate)})</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <p><a href={url('/players/')}>← All players</a></p>
+  </div>
+</Base>
+
+<style>
+  .page { padding-top: 1.5rem; }
+  .crumbs { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem; }
+  .crumbs a { color: var(--muted); }
+  .lede { font-size: 1.1rem; }
+  h2 { margin-top: 2.25rem; }
+  .list { list-style: none; padding: 0; margin: 0; }
+  .list li { padding: 0.9rem 0; border-bottom: 1px solid color-mix(in srgb, var(--muted) 30%, transparent); }
+  .list a { font-weight: 700; display: block; }
+  .list .muted { font-size: 0.85rem; }
+  .summary { margin: 0.25rem 0 0; font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
+  .compact li { margin-bottom: 0.35rem; }
+</style>

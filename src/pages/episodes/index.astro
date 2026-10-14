@@ -1,0 +1,90 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getShow } from '../../lib/feed';
+import { url, episodePath } from '../../lib/urls';
+import { formatDate, formatDuration } from '../../lib/text';
+import { breadcrumbs, podcastSeries } from '../../lib/schema';
+
+const show = await getShow();
+const byYear = Map.groupBy(show.episodes, (ep) => ep.pubDate.getFullYear());
+---
+
+<Base
+  title="All Episodes | Talking About Birds, a St. Louis Cardinals Podcast"
+  description={`Every episode of Talking About Birds, the weekly St. Louis Cardinals podcast. ${show.episodes.length} episodes with show notes and transcripts.`}
+  path="/episodes/"
+  jsonLd={[podcastSeries(show.episodes.length), breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Episodes', path: '/episodes/' }])]}
+>
+  <div class="wrap narrow page">
+    <h1>All episodes</h1>
+    <p class="muted">{show.episodes.length} episodes of Cardinals talk, newest first.</p>
+
+    <label class="search">
+      <span class="visually-hidden">Search episodes</span>
+      <input id="q" type="search" placeholder="Search episodes: a player, a topic, a bit…" autocomplete="off" />
+    </label>
+    <p id="no-results" class="muted" hidden>No episodes match that search.</p>
+
+    {
+      [...byYear].map(([year, eps]) => (
+        <section class="year" data-year>
+          <h2>{year}</h2>
+          <ol class="list" reversed>
+            {eps.map((ep) => (
+              <li class="row" data-search={`${ep.number} ${ep.title} ${ep.summary}`.toLowerCase()}>
+                <span class="num">#{ep.number}</span>
+                <div>
+                  <h3>
+                    <a href={url(episodePath(ep))}>{ep.title}</a>
+                  </h3>
+                  <p class="summary">{ep.summary}</p>
+                  <p class="meta muted">
+                    <time datetime={ep.pubDate.toISOString()}>{formatDate(ep.pubDate)}</time> · {formatDuration(ep.durationSeconds)}
+                    {ep.transcript && ' · Transcript'}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))
+    }
+  </div>
+</Base>
+
+<script>
+  const input = document.querySelector<HTMLInputElement>('#q')!;
+  const rows = [...document.querySelectorAll<HTMLElement>('.row')];
+  const years = [...document.querySelectorAll<HTMLElement>('[data-year]')];
+  const empty = document.querySelector<HTMLElement>('#no-results')!;
+  input.addEventListener('input', () => {
+    const terms = input.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    let shown = 0;
+    for (const row of rows) {
+      const match = terms.every((t) => row.dataset.search!.includes(t));
+      row.hidden = !match;
+      if (match) shown++;
+    }
+    for (const year of years) year.hidden = !year.querySelector('.row:not([hidden])');
+    empty.hidden = shown > 0;
+  });
+</script>
+
+<style>
+  .page { padding-top: 2.5rem; }
+  .search input {
+    width: 100%; font: inherit; padding: 0.75rem 1rem; margin: 0.5rem 0 1.5rem;
+    background: var(--surface); color: var(--text);
+    border: 3px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm);
+  }
+  .year h2 { margin-top: 2rem; padding-bottom: 0.3rem; border-bottom: 3px solid var(--border); }
+  .list { list-style: none; margin: 0; padding: 0; }
+  .row { display: grid; grid-template-columns: 3.5rem 1fr; gap: 0.75rem; padding: 1rem 0; border-bottom: 1px solid color-mix(in srgb, var(--muted) 30%, transparent); }
+  .row[hidden] { display: none; }
+  .num { font: 700 1.1rem/1.4 var(--font-pixel); color: var(--red); }
+  .row h3 { font-size: 1.08rem; margin: 0 0 0.2rem; }
+  .row h3 a { color: var(--text); }
+  .summary { margin: 0 0 0.25rem; font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
+  .meta { margin: 0; font-size: 0.85rem; }
+  @media (prefers-color-scheme: dark) { .num { color: var(--link); } }
+</style>

@@ -1,0 +1,181 @@
+---
+import Base from '../../layouts/Base.astro';
+import EpisodeCard from '../../components/EpisodeCard.astro';
+import ListenButtons from '../../components/ListenButtons.astro';
+import { getShow, type Episode } from '../../lib/feed';
+import { url, episodePath } from '../../lib/urls';
+import { formatDate, formatDuration, excerpt } from '../../lib/text';
+import { podcastEpisode, breadcrumbs } from '../../lib/schema';
+import { playersForEpisode } from '../../lib/players';
+import { SITE, PATREON_URL } from '../../site.config';
+
+export async function getStaticPaths() {
+  const { episodes } = await getShow();
+  return episodes.map((episode, i) => ({
+    params: { slug: episode.slug },
+    props: { episode, newer: episodes[i - 1], older: episodes[i + 1] },
+  }));
+}
+
+interface Props {
+  episode: Episode;
+  newer?: Episode;
+  older?: Episode;
+}
+const { episode: ep, newer, older } = Astro.props;
+const path = episodePath(ep);
+
+// Titles: episode title first, then the show. Episode titles are often jokes ("Two Talls"),
+// so add "Cardinals Podcast" when it fits; that's the phrase people actually search.
+const title =
+  [' | Talking About Birds, a Cardinals Podcast', ' | Talking About Birds']
+    .map((suffix) => ep.title + suffix)
+    .find((t) => t.length <= 70) ?? excerpt(ep.title, 70);
+const description = ep.summary || `Episode ${ep.number} of Talking About Birds, a St. Louis Cardinals podcast.`;
+const youtubeId = ep.youtubeUrl?.match(/(?:v=|youtu\.be\/)([\w-]{11})/)?.[1];
+const related = [newer, older].filter(Boolean) as Episode[];
+const players = await playersForEpisode(ep);
+---
+
+<Base
+  title={title}
+  description={description}
+  path={path}
+  type="article"
+  jsonLd={[
+    podcastEpisode(ep),
+    breadcrumbs([
+      { name: 'Home', path: '/' },
+      { name: 'Episodes', path: '/episodes/' },
+      { name: `Episode ${ep.number}`, path },
+    ]),
+  ]}
+>
+  <article class="wrap narrow page">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href={url('/')}>Home</a> / <a href={url('/episodes/')}>Episodes</a> / <span aria-current="page">#{ep.number}</span>
+    </nav>
+
+    <header>
+      <p class="eyebrow">
+        Episode {ep.number} · <time datetime={ep.pubDate.toISOString()}>{formatDate(ep.pubDate)}</time> · {formatDuration(ep.durationSeconds)}
+      </p>
+      <h1>{ep.title}</h1>
+    </header>
+
+    <div class="card player">
+      <audio controls preload="none" src={ep.audioUrl}>
+        <a href={ep.audioUrl}>Download the episode (MP3)</a>
+      </audio>
+      <div class="player-links">
+        <span class="muted">Listen on</span>
+        <ListenButtons only={['Apple Podcasts', 'Spotify', 'YouTube', 'Pocket Casts']} />
+      </div>
+    </div>
+
+    {
+      youtubeId && (
+        <div class="video">
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${youtubeId}`}
+            title={`${ep.title} (video)`}
+            loading="lazy"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        </div>
+      )
+    }
+
+    <section class="notes">
+      <h2>Show notes</h2>
+      <div class="prose" set:html={ep.descriptionHtml} />
+    </section>
+
+    {
+      players.length > 0 && (
+        <section class="players">
+          <h2 class="visually-hidden">Players in this episode</h2>
+          <p class="eyebrow">Players in this episode</p>
+          <ul>
+            {players.map((p) => (
+              <li>
+                <a href={url(`/players/${p.slug}/`)}>{p.name}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      ep.transcript && (
+        <section class="transcript" id="transcript">
+          <h2>Transcript</h2>
+          <p class="muted">
+            Machine-generated, so expect some butchered player names. About {Math.round(ep.transcript.wordCount / 100) * 100} words.
+          </p>
+          <details>
+            <summary class="btn btn--plain">Read the full transcript</summary>
+            <div class="transcript-body">
+              {ep.transcript.lines.map((line) =>
+                line.speaker ? (
+                  <p>
+                    <strong>{line.speaker}:</strong> {line.text}
+                  </p>
+                ) : (
+                  <p>{line.text}</p>
+                ),
+              )}
+            </div>
+          </details>
+        </section>
+      )
+    }
+
+    <aside class="card talkback">
+      <p>
+        <strong>Talk back:</strong> text or leave a voicemail at <a href={`tel:${SITE.phone.digits}`}>{SITE.phone.display}</a>.
+        Like the show? <a href={PATREON_URL} rel="noopener">Support it on Patreon</a>.
+      </p>
+    </aside>
+
+    <nav class="pager" aria-label="More episodes">
+      {related.length > 0 && <h2>More episodes</h2>}
+      <div class="pager-grid">{related.map((e) => <EpisodeCard episode={e} />)}</div>
+      <p><a href={url('/episodes/')}>Browse all episodes →</a></p>
+    </nav>
+  </article>
+</Base>
+
+<style>
+  .page { padding-top: 1.5rem; }
+  .crumbs { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem; }
+  .crumbs a { color: var(--muted); }
+  header h1 { margin-top: 0.4rem; }
+  .player { padding: 1rem; margin: 1.5rem 0; }
+  .player-links { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.9rem; font-size: 0.9rem; }
+  .player-links :global(.btn) { font-size: 0.85rem; padding: 0.45em 0.75em; }
+  .video { position: relative; aspect-ratio: 16 / 9; margin: 1.5rem 0; border: 3px solid var(--border); box-shadow: var(--shadow); background: #000; }
+  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .notes, .transcript { margin-top: 2.5rem; }
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] > summary { margin-bottom: 1rem; }
+  .transcript-body { font-size: 0.97rem; }
+  .transcript-body p { margin: 0 0 0.85em; }
+  .transcript-body strong { color: var(--red); }
+  .players { margin-top: 1.5rem; }
+  .players ul { list-style: none; padding: 0; margin: 0.5rem 0 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .players a {
+    display: inline-block; padding: 0.25rem 0.6rem; font-size: 0.9rem; font-weight: 700; text-decoration: none;
+    color: var(--text); background: var(--surface); border: 2px solid var(--border); border-radius: 3px;
+  }
+  .players a:hover { background: var(--gold); color: var(--ink); }
+  .talkback { padding: 1rem 1.25rem; margin: 2.5rem 0; background: var(--gold); color: var(--ink); }
+  .talkback a { color: var(--ink); font-weight: 700; }
+  .talkback p { margin: 0; }
+  .pager-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1rem; }
+  @media (max-width: 640px) { .pager-grid { grid-template-columns: 1fr; } }
+  @media (prefers-color-scheme: dark) { .transcript-body strong { color: var(--link); } }
+</style>

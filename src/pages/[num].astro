@@ -1,0 +1,28 @@
+---
+// Short links: talkingaboutbirds.com/241 → the full episode page.
+// Easy to say out loud on the show and in social posts.
+import { getShow, type Episode } from '../lib/feed';
+import { url, absoluteUrl, episodePath } from '../lib/urls';
+
+export async function getStaticPaths() {
+  const { episodes } = await getShow();
+  return episodes.map((episode) => ({ params: { num: String(episode.number) }, props: { episode } }));
+}
+
+const { episode } = Astro.props as { episode: Episode };
+const target = url(episodePath(episode));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{episode.title}</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={absoluteUrl(episodePath(episode))} />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+  </head>
+  <body>
+    <p>Redirecting to <a href={target}>{episode.title}</a>…</p>
+  </body>
+</html>

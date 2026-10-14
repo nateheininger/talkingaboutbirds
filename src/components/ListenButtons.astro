@@ -1,0 +1,25 @@
+---
+import { LISTEN } from '../site.config';
+
+interface Props {
+  only?: string[]; // limit to these platform names
+}
+const { only } = Astro.props;
+const links = only ? LISTEN.filter((l) => only.includes(l.name)) : LISTEN;
+---
+
+<ul class="btn-row listen">
+  {
+    links.map((l, i) => (
+      <li>
+        <a class:list={['btn', i === 0 ? '' : 'btn--plain']} href={l.url} rel="noopener">
+          {l.name}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .listen { list-style: none; margin: 0; padding: 0; }
+</style>

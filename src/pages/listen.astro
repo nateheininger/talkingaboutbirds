@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import { LISTEN, SITE } from '../site.config';
+import { breadcrumbs } from '../lib/schema';
+---
+
+<Base
+  title="Where to Listen | Talking About Birds, a St. Louis Cardinals Podcast"
+  description="Subscribe to Talking About Birds, a weekly St. Louis Cardinals podcast, on Apple Podcasts, Spotify, YouTube, Pocket Casts, or any app with our RSS feed."
+  path="/listen/"
+  jsonLd={breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Listen', path: '/listen/' }])}
+>
+  <div class="wrap narrow page">
+    <h1>Where to listen</h1>
+    <p>New episodes every week. Pick your app:</p>
+    <ul class="apps">
+      {
+        LISTEN.map((l) => (
+          <li>
+            <a class="card app" href={l.url} rel="noopener">
+              {l.name}
+              <span aria-hidden="true">→</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2>Any other podcast app</h2>
+    <p>Paste this RSS feed into your app's “add by URL” option:</p>
+    <div class="feed card">
+      <code id="feed">{SITE.feedUrl}</code>
+      <button class="btn" type="button" id="copy">Copy</button>
+    </div>
+  </div>
+</Base>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>('#copy')!;
+  button.addEventListener('click', async () => {
+    await navigator.clipboard.writeText(document.querySelector('#feed')!.textContent!.trim());
+    button.textContent = 'Copied!';
+    setTimeout(() => (button.textContent = 'Copy'), 2000);
+  });
+</script>
+
+<style>
+  .page { padding-top: 2.5rem; }
+  h2 { margin-top: 2.5rem; }
+  .apps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr)); gap: 1rem; }
+  .app {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.2rem; font-weight: 700; color: var(--text); text-decoration: none;
+    transition: transform 80ms ease, box-shadow 80ms ease;
+  }
+  .app:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--shadow-color); }
+  .feed { display: flex; gap: 0.75rem; align-items: center; padding: 0.75rem; }
+  .feed code { flex: 1; overflow-wrap: anywhere; font-size: 0.9rem; }
+</style>

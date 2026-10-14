@@ -1,0 +1,868 @@
+208
+Nate: [00:00:00] Hello everybody, and welcome back to talking about Birds, the only Cardinal podcast that has one too many bins. My name is Nate Heininger and I'm joined by my co-host Ben Samka.
+ben: What's up a DH
+Nate: If you have an idea for the opening bit, text or leave us a voicemail at 8 4 8. 48 birds, or you can be like Chaz from the bird scored. Uh, who suggested that one? I, I assume you know, they, they mentioned the relevance of it because we have on our episode this time, as I'm sure you all have seen in the title, uh, Ben Clements from FanGraphs is indeed joining us.
+We will be playing that interview shortly. Um, but I imagine that Chaz doesn't mean Ben Clemon, so it must just be. You and I agree. I do think we have won too many. Ben Bens on this show,
+ben: would you even do if I wasn't here Where where would you be generally if I wasn't here
+Nate: uh, accepting an Academy Award. I,
+ben: [00:01:00] Destitute on the side of the road
+Nate: uh, hello, Mrs. First Lady Heininger, it's good to see you this morning in our Air Force One.
+ben: believe that you would be president
+Nate: Yeah, if I didn't have you dragging me down, pulling me everywhere I go, talk about ball and chain ham bone. Just hold me back, hold me back. Ham, bone,
+ben: just doing Word association at this point
+Nate: back, back flip. I've been, I've always wanted to be able to do a back flip. Um.
+ben: You should do it right now on camera
+Nate: I have this, I think, real reasonable fear of not breaking my own neck, doing something stupid. Um, and I think that that is the, the actual likely.
+ben: like a fear that you just walk around with all that you're thinking about that
+Nate: No, honestly, in my day to day, I'm generally, uh, fearless. And I don't mean that like,
+ben: idiot
+Nate: I'm a cool guy. I just mean I don't walk around like carrying a [00:02:00] lot of, in the moment fears. But as someone who I've, I've always wanted to be able to do a standing back flip. 'cause there are people out there who can do that.
+And I do think I could get there with the leg, leg strength and everything, but I also think there's at least, there's at least. A 40% chance that I break my neck, uh, while trying. And I'm
+ben: the flexibility and power Of a gymnastic athlete or or a a winter Olympian or
+Nate: Uhhuh
+ben: absolutely It's just untapped potential I
+Nate: Uhhuh.
+ben: only take you a week to knock it out
+Nate: Mm-hmm. Thank you. I, I, what, what, what, uh, I was thinking about the Winter Olympics the other day. I'm What would, uh, you'd probably do skiing, some sort of skiing, right?
+ben: Yeah
+Nate: I'm, I, I'm probably doing luge. I think just lay me down and I'll just ride this thing.
+ben: I've I've been watching a lot of Winter Olympics I do think
+Nate: Uhhuh
+ben: have the body type of a uh skeleton or luge or um
+Nate: the anchor, anchor position.
+ben: some thick boys up in there Yeah That [00:03:00] like I'm like I I can be heavy and I can stand still
+Nate: sit,
+ben: my weight side to
+Nate: be he, be heavy and sit there. I, that's one of my chief skills.
+ben: I will tell you I have watched I did not really get in the the curling bug last year but I have wa been watching a lot of curling this year and it's a good it is a lot of fun to watch and I think it would be a lot of fun to play It's also the least athletic sport that's ever been in the Olympics It's more of a skill game Um so
+Nate: Yeah.
+ben: like skiing super g big air uh you know doing the the freestyle slopestyle stuff you know all all the all the flips and tricks or curling would probably be what I what I would go
+Nate: Y we watched curling at one of the ski trips, I guess it was the last Winter Olympics, and there was that guy who was like, looked like the uncle from, um, what was the show with like,
+ben: dudes up in there Yeah
+Nate: what was the show with me? Uh. Uh, Aqua, uh, uh, with Meat wa and Shake, um, tea Aqua Teen [00:04:00] something,
+ben: Force
+Nate: Aqua Teen Hunger for us. It looked like the guy from that,
+ben: Yeah
+Nate: uh, that was like his job was the, um, he was the main curler and then everyone's doing the little brooms around it.
+Yeah, that
+ben: well
+Nate: would be fun.
+ben: Nate You're not you're not Only curling is actually when you're you're making the the rock come around a corner
+Nate: Wow.
+ben: up the ice with your little brushes I've learned a lot over the
+Nate: Yeah. Have you actually done curling before?
+ben: There is a curling center just outside of Denver I have never done it I think I would like to I'm I'm
+Nate: Yeah.
+ben: I'm gonna try to make although I bet you it's gonna be impossible to do post Olympics cause everybody's gonna be thinking the same thing
+Nate: Yeah. I also imagine that, um, while it looks silly, it's actually quite a finesse sport and, uh,
+ben: that's the whole thing
+Nate: yeah, and we would have, or it, it's one of those things that I think you would look at and be like, okay, I think I can kind of get it. And then realize that you have no idea what you're doing with that little brush, uh, when you're in front of the, in [00:05:00] front of the,
+ben: I think it's super
+Nate: whatever it's called.
+ben: I think those I was looking it up those stones or rocks or whatever they weigh like 40 pounds They
+Nate: Yeah, that's too heavy.
+ben: it's just too heavy
+Nate: It's just too heavy.
+ben: Yeah
+Nate: Can I get like a six pound curl? You know, like when you go bowling, can you, uh, can you.
+ben: I would always like to grab the the lightest kid ball and put like one finger in it and see how hard I could throw it
+Nate: I, I like to get the heaviest ball, um, get, go, get my fingers stuck in it, and then do the thing where I'm propelled by the ball I'm trying to throw, like, halfway down the lane.
+ben: The
+Nate: know,
+ben: Chaplin is what I call it
+Nate: I did, uh, in high school, hit, uh, uh, a girl with the back swing of a bowling ball, and I hit her in the head with it, her fault.
+By the way, I'm up there. I'm where I'm supposed to be bowling, so, uh, but that was not a feeling that I enjoyed. Um,
+ben: up with the athleticism that I was talking about when I think you could probably back flip uh by this time next week
+Nate: I think I could, I think I [00:06:00] could.
+ben: Do
+Nate: not going All right. Here. Hold on.
+ben: Ooh Bang
+Nate: All right. 
+ben: Nate
+Nate: forgot to take my headphones off. We have a good. We do have a good episode. Um, let's get to it. We had Ben Clemons, uh, from FanGraphs on St. Louis Guy, um, but obviously, um, quite successful in, in baseball riding. So, uh, it was a joy to have him on. We're gonna play the interview. We also played a little game.
+Uh, we're gonna play all of that. And then we're gonna come back, uh, and, uh, talk a little bit about our, our interview and any takeaways. And then, um, we'll wrap up with a little bit of League News and then we'll get outta here. So we are going to play it right now joining us today is FanGraphs Rider Ben Clemons. Ben, thank you so much for being here.
+Ben: Yeah, thanks for having me [00:07:00] on.
+Nate: Yeah. Super excited to get to, uh, talk to you. I'm curious, how's your off season been going? I know we're, we're finally on the other side of the, of the cold, dark baseball this winter. The other sport, the bad sport's done it's baseball season.
+How, how's it been going for you? How's the off season been?
+Ben: Um, oh, this, this is actually convenient. Uh, by the time this goes live there's gonna be a new tool on to look at some of our data like differently. Um, and that's what I've been doing this winter. It's hard to do baseball news when there's no baseball, so I started making some graphs 'cause fan graphs has been a little light on new graphs for a while.
+So, um, yeah, if you check it out that that's kinda what we do when games aren't going on. Try to make the website better when games are on and, uh, this is a pretty good winner for that.
+Nate: Nice. Yeah, I'm excited to check that out. And, uh, hey, you're, you're preaching to the choir here. We we're a weekly show. Um, and, and though it has been a, um, exci, the, arguably the most exciting, or at least
+Ben: a
+Nate: Yeah. Uh,
+Ben: no team has done [00:08:00] more.
+Nate: yeah. Exciting, interesting, you know, somewhere in between those two, uh, off season for St. Louis Cardinals.
+But still, um, you know, we're, we're pretty desperate at times for, uh, for content here during the, during the, during the winter. But, uh, interested to see these new graphs. Um, I think we're both fans of graphs, uh, but, uh, oh God. I'm sorry. I, I'm sorry. That sucked. Uh, it's okay though. We're moving forward.
+Ben: I mean, how bad could it be?
+Nate: It was a pity laugh though.
+Let's be honest. You both looked down a little bit.
+Ben: I didn't
+Nate: Yeah,
+Ben: and I still did,
+Nate: I could tell. I could tell. Um, and really that's our brand. Uh, so again, thanks for being here. Um, I guess. Curious from your perspective, how's, what's your take on the Cardinal off season so far? Um, you know, what's been interesting to you?
+Ben: I mean, for me, been gratifying to see them actually do a thing instead of trying to do two things. 
+Nate: Yes,
+Ben: trying to do two things has [00:09:00] been, look, I really liked it for a decade. Right? And it
+Nate: sure.
+Ben: that they were always managing to do these two things, but sometime in the 2020s, they stopped being able to, and they kept trying to. So, I don't know, like I'm not gonna be overjoyed to watch the games this year. Um, like I'm going to see, uh, my dad's getting elected into the shammanad, uh, sports Hall of Fame this, uh, this April, which is pretty cool.
+Nate: Wow.
+Ben: elected, I don't know, getting inducted. So I'm going and I'm like, oh man, I gonna go see a game? Like, probably, but this is the first time where I'm like, oh, this is, they're gonna be way out of it.
+Nate: Yeah. Well, congratulations to your father.
+Ben: uh, like April. They won't be that out of it, honestly. Um, but
+some hope.
+hope will still be there.
+Yeah.
+Uh, yeah, I mean, I think it was one of these things where like his whole team's getting inducted because he was there when they were like starting to try more at sports, and it's nothing he did, but I'm pretending that it's all him.
+Nate: It is the, the Jason Hayward of, uh, you know, of, of the team, right? Just happened to be there at the right time. Win the [00:10:00] World Series. Um, yeah, I, we've talked a lot about that on this show. Um, you know, whether you agree with all the individual moves, it has certainly been satisfying, uh, to see Heim bloom, like come in and have a plan and seemingly executing on it.
+Obviously, like that's the big gamble of a rebuild. Something that we haven't really gone through as a Cardinal fans.
+Ben: yeah. It's gonna be weird, right? Like I'm, I'm really not used to thinking of it that way as a fan. Like I analyze other teams, but from the, like, this is a team who I own a bunch of their clothes perspective. Like the Cardinals have never tanked since I've been a fan, and it's gonna be strange,
+Nate: Yeah. Yeah. We actually, so, uh, we had a question on the show the other day. Uh, love to get your take on it. Um, so if you're buying a Cardinal jersey right now who, like, and, and you're, you're hoping for, you know, it's something that you can wear for a long time and feel good about it. What's your, who, what are you, what are you buying?
+Who are you purchasing?
+Ben: [00:11:00] Oh, I'm getting Mason win. I mean,
+Nate: Yeah.
+Ben: win that there's other options that are fun. I mean, I might get David freeze and just be like, this, this was the last time I had an incredible time as a Cardinals fan. Uh, but I already have one of those. Uh, I would get Mason win. I,
+Nate: Yeah,
+Ben: that Mason win for a few reasons.
+One, he's just really good.
+Nate: sure.
+Ben: that's nice. But two, I think that players like him don't get traded very often. the way that teams value shortstop defense is
+Nate: Yeah,
+Ben: commensurate with what he's worth to the Cardinals. So I both think that he's gonna be great for a long time and that even though like they're basically trying to trade everything that's not nailed down. I think that bloom is like value focused enough that he's gonna be like, ah, we're like, we're getting more out of leaving him here than moving him. So it is a good combination of good player, but not so desirable that he might get moved.
+Nate: yeah, yeah. Almost everybody has come up in trade talks this off season. Even people you would think that the Cardinals would be holding on tightly [00:12:00] to like Yvonne Herrera, um, you know, he was even floated at at some point. Um, but you've really heard nothing about
+Ben: Yeah.
+Nate: a semblance of a discussion of trading Mason win.
+Ben: Yeah, I mean I think that that basically comes down to the fact that defense is really valuable, but teams hate trading a lot for it. it, it feels like a lot more like kind of fragile
+Nate: Yeah.
+Ben: think teams vary so much in their defensive evaluation of players like. Hitting, not that everyone has the same metrics, but they've got kind of the same metrics.
+Fielding's really tough. I think that kind of suppresses the value of fielders and trade, but not to the team. Like he's great. He's a golf club shortstop who is an average batter. That's awesome. So yeah, I, I
+Nate: Yeah.
+Ben: him.
+Nate: Yeah, that makes sense.
+Ben: funny, like you can go get a good defensive shortstop in free agency, not easily, but the fact that he is young, he's controllable, he can hit
+Yeah.
+think he can
+Yeah,
+He can [00:13:00] kind of do everything, or at least he projects to be able to
+I
+It's pretty great.
+agree. I mean, I think the, the difference between like the guys you get in free agency who can play a good defensive shortstop and win is meaningful. Like to your chances of winning, like getting average offense instead of 20% below average offense is like a really big deal. Um, I, I think that he's gonna be a, a core cardinal for a long time to come.
+Nate: Yeah. Yeah.
+Ben: it's hard for me to imagine like there may be one of these young guys that the Cardinals have picked up recently is a future Mason win. Um,
+Yeah,
+like looking at the prospect rankings and who's in the miners. Like there's not really a guy with these
+yeah,
+that exist, so you might as well hold onto 'em.
+yeah. Like, like, I mean, weather Holt is maybe technically a short stop, but he is not like he's gonna play second. Um, um, and I, I think that generally speaking, like it's hard to get guys with these skills, like the [00:14:00] actually plus defensive skills. I mean, there's a lot of shortstops in the system, obviously, like, you
+Nate: Yeah.
+Ben: gotta stand on the field. But yeah. Uh, I think that the Cardinal system is, it's been tilting towards the, like, like toolsy, but not necessarily defensive toolsy way of late. And that makes his spot like even better. I agree.
+Nate: Yeah. I think we're all still dreaming a little bit on Mason wind too. And, you know, as far as that offensive upside, 'cause just last year, 91 WRC plus, so, you know, below average not, but not super below average and still 3.1 or 3.5 FanGraphs wore pretty incredible floor. Um, I, I think we probably see that as his floor.
+Um, and it wouldn't take too much of a step up, too much more production, uh, to get. Even two 100 WC plus or higher, and then that war starts to to fly, right? So, yeah.
+Ben: um, like high floor guy too.
+Nate: Yeah.
+Ben: the, it's, you're not gonna see a season where his, where the bottom completely falls out of his offense because it's not that kind of [00:15:00] offense. Like it,
+broken for two months last year and still.
+yeah.
+know, playable for the reasons that he was playable. And we were, I, I think he was really just in to win the gold glove, which he ended up doing, which was great. Um, but even him, you know, with one armine behind his back, he was still a, a plus player.
+Yeah, that, that's basically what I mean. Like he's just not gonna strike out that much. And I mean, he is not gonna hit for a lot of power, but he puts the ball and play a ton. He doesn't walk zero like that. This style just has a high floor. Um, and since he has a really high floor and ceiling defensively, it's cool. Yeah. Like that works. You wouldn't want this as your like left fielder. You'd be like, no, this can't be. But once you know that his defense is so good that you just need to avoid disaster, then Awesome. Like, I'm really glad he has a high offensive floor.
+Yeah. Um, talking about these kind of like toolsy guys that the Cardinals have been going after, um, you know, we got Liam [00:16:00] Doyle, uh, dangelo, Sinja, Brandon Clark, Ryan Mitchell, Tai Pete, they've all come into the organization in the last year, six months, something like that. since taking over Heim Bloom, from my point of view, is really focused on acquiring these like high variance, high upside players. Curious how you feel about, uh, that seems like the biggest difference in the first, uh, tenure, early tenure of Heim Bloom as, uh, opposed to Mo and Co. Um, how, how are you viewing that? Are, are you a fan of this? Do you think they should keep digging into this? Are you worried that it's, that t Pete's gonna strike out 40% of the time and this is gonna happen to everybody? What, how, how are you feeling about this, uh, methodology, this.
+I first bummer about Clark, I think he's out till June, uh, with I think elbow elbow soreness. Yeah. From like, you know, the classic like ramping up for spring training and something hurts. Um, he, he wasn't contributing this year. It's just a bummer from the,
+Nate: Yeah.
+Ben: the like, [00:17:00] you know, development standpoint.
+But like this strategy. I think that this strategy is probably mostly like, you know, they say good artists plagiarize, great artists steal. I feel like Bloom stole a bunch of the ideas for this from his time on the raise and then later his time on the Red Sox, which is that you should operate your prospects differently when you're kind of rebuilding and when you're competing. And I think the Cardinals very rightly did a pretty good job of drafting for like. Proximity, like ability to contribute to the team with some certainty and trading that way too. Um, over the last however many years, like Mo Zak was really good at that. That's a, that's a skill that he had that I think other major league man, uh, general managers were missing. so that's why the Cardinals were more able to compete year in and year out than you'd expect. Like they did a really good job drafting from the back of the draft for like high floor guys who they devil magic into being good offensive contributors. Um, I mean they're, they were really good at this.
+And that's, that's a real skill [00:18:00] it's really important that you not have a bunch of high variance guys when you need to make the playoffs next year. And you're like, I'm gonna need three contributors from aaa. I know it. Like, I don't know who, and I don't know
+Nate: Yeah.
+Ben: but the team needs to be backfilled by AA now that, that's like not really an issue. I mean, I, I look through the roster and I look through the rotation and like, it's, it's not that different from the AA roster. Um, like there's a lot of young dudes on there and like. That's okay, because that's, that's what they're trying to do right now. But when that's the case, I think that you should take a portfolio approach and accept a higher chance of failure because you don't actually need to have, you know, like prospects hit, you need like five to hit like really well. And they're doing a good job of that. Um, I think especially now that they have a lot more prospects in their system. So FanGraphs does a farm system ranking where we just like, we use some formula to describe a dollar value, really rough, very broad to every player that we rank [00:19:00] Formulaically. And the Cardinals are second just like shocking to me, honestly, because they've been,
+quickly.
+Nate: It did.
+Ben: very quickly and the way it happened is that they just got a lot of guys, I think our, you know, we do a top X prospects where it's like the guy's worth ranking
+Nate: Mm-hmm.
+Ben: some teams are like the top 25 prospects, the top, you know, 16 prospects, the top 31 prospects, 53 for the Cardinals. That was, that was, you know, there's gonna be more
+Nate: Yeah.
+Ben: was a few weeks ago now, I think.
+I was looking at Long and Hagen's article from, it was either last year or the year previous, and I think it was like 23 or 25 Cardinals. So we have doubled that. Also, like, I'm not saying McGreevy is flamed out, but he's kind of, he's, he is not on that. Like there's a lot of players that are affecting the major League roster that aren't even on that
+Yeah.
+and we've still doubled it. It's uh, it's
+Yeah. So I think that in that context, it makes a lot more sense to be taking swings. Like when you have 53 [00:20:00] dudes, you'll find some back of the roster guys. This isn't like the old Cardinals teams where it's important to prioritize floor. You're gonna back into some floor and accident. So I really like swinging for the fences with your, with your development guys, given that.
+Nate: It is interesting too. We, we've noticed, um, like with all of these trades, all of these moves, they really have prioritized quantity in the return. We, we have not seen like a true, I I think a lot of us were, we're kind of hoping for going into really at the start of the tear down last, uh, half season was, uh, some sort of package deal where we're throwing in like three or four of these, uh, log jam players, you know, he.
+Ben: gray Contreras,
+Nate: Yes,
+Ben: and we get a Roman Anthony
+Nate: yes, exactly. We get a blue chip like going into, like, they're the, they're going into the lineup, into the rotation, wherever, right out of the trade. And we really haven't had any of that. Um, I think Sinja is the highest ranked prospect that they've acquired, which makes sense. [00:21:00] Donovan was the best trade, uh, trade piece they had, and they got the best return.
+Um, but even him, like, you know, consensus, very.
+Ben: question marks.
+Nate: Yeah. But he still, you know, we said it on our show and you wrote an article about the Brendan Donovan trade and the cardinals in general, but like, there's a possibility that no one from the Brendan Donovan trade actually makes it to the major leagues. I, I don't think that's the case, but they all have their questions.
+They all have their problems. But you can see when you plug that into the broader context, which you're talking about, they've just acquired a mass amount of guys with questions, but enough upside that the assumption is one of the fi one of the five guys, including the two picks, uh, from the Brendan Donovan trade, one of 'em has to hit, right.
+One of 'em has to click and that'll make the whole trade worth it.
+Ben: Actually, so two things I think are pretty interesting there in what they're doing. One is that I think the market is mispricing those blue chip prospects right now. Like they, I think that they've looked at what's been going on in free agency that [00:22:00] the, the better, like the top three agents are kind of getting a disproportionate amount of the money now,
+Nate: Yeah.
+Ben: They've kind of applied it indiscriminately to like top prospects. So you almost cannot acquire a top guy anymore. Like the, expected return on these or the, the necessary returns for these guys is so high. But I actually don't think it works quite the same. Like I don't think that their chances of becoming a superstar in the majors are quite so like the 100th best prospect versus the 10th best prospect. I think that we are mis valuing the difference between those guys. And given that I think what the Cardinals are doing makes sense. Like the, the price to get these very top guys is just, just think it's wrong. And if I were running a team, I'd be doing what they are. I think that the sweet spot is kind of in guys who could become, um, a star but are currently priced below that for like risk reasons, basically.
+Nate: Yeah, a, a lot of the guys in the top 10 prospect list are [00:23:00] still like we have, we're dreaming on them the most. Right. There are some exceptions. I think JJ Erol, you know, he's one of the more clear, like he does Yeah. Like he's almost certainly not, yeah. Like we don't know what his high end is ultimately gonna look like, but he certainly seems like he's gonna have a pretty good floor.
+But there are other guys in the top tens that like, are just as likely to be a bust as anyone else. Um,
+Ben: um, I think the, the draft picks you were talking about actually feeds into that. One of the ways to get these guys is via the draft. And I don't know who they're gonna take with those draft picks, obviously, but then this is something that I am like late to and still kind of understanding from our prospect guys.
+The draft pool for these slots matters more than the draft picks.
+Nate: yeah.
+Ben: you, they're gonna get like two and a half million dollars to spend on signing bonuses from those picks. And one thing they could do is sign players worth two and a half million dollars with those picks. But what a lot of teams do is go sign some random senior, uh, give him a hundred grand. [00:24:00] Pocket the money and use it to pay over slot for your earlier draft picks. So the Cardinals might say, Hey, Hey players, you should tell your agents that you wanna go to the Cardinals 'cause we will pay you two and a half million dollars over slot at pick 13. And that works like you can float guys down the draft order that way. Or you could take a, a highly regarded high schooler in the second round, pay 'em first round money with this overage you have from your draft pick allocation and basically get an extra first round pick out of it. So I think that that's like another way that they're looking at the ways to get these guys who could become future superstars and saying, uh, they're kind of, they're mispricing this way of getting future superstars.
+Let me buy that.
+Nate: Yeah, it is interesting how much it has switched even in the last 15 years. You know, going back from a Cardinal history standpoint, trading, uh, Brett Wallace for half a season of Matt Holiday, you know, he was a top prospect at that time, and that was sort of how the market worked. Then you, you, your blue chip prospect was worth half a season of a star or, [00:25:00] or somewhere around there.
+Um,
+Ben: quite a real star, a season and a half, maybe it's a really good prospect. You can
+Nate: yeah,
+Ben: good star. But yeah,
+Nate: yeah,
+Ben: completely.
+Nate: yeah, yeah. Uh,
+Ben: AJ Perler trading. Was it Leo DeVry for Mason Miller?
+Nate: well, he,
+Ben: whatever he wants to do. I
+Nate: yeah. Yeah.
+Ben: your piece on the Donovan Trade, uh, you described behind Bloom as methodically taking, uh, the Cardinals roster down to the studs. Would you say like this, is this Donovan trade, your favorite trade, the Cardinals have executed in the off season, or is there one that tops it?
+And I'm also curious if there's one that you kind of hate.
+Yeah. I mean, I've gotta be honest with you, I, think I'm a pretty good analyst. I also think I'm pretty realistic about the limits of my knowledge and I really like the strategy the Cardinals are taking. Uh, but one thing that is inherent in this strategy is that you're gonna lose a lot of the trades. know, everyone talks about like, don't trade with the [00:26:00] raise. They always beat you. raises win like 53% of their trades. They just trade a lot. if you trade a lot and have a a systematic edge, it works. Um, and I, I think Bloom is essentially replicating that. I think I like the Donovan trade the most.
+I really like Che. Like I've, I've watched a lot of him, uh, when I was even before writing that article 'cause he's a switch pitcher and that's interesting.
+Yeah.
+Nate: Mm-hmm.
+Ben: to our scouts a lot about him and I, I think that he almost might be ranked higher if he were just like working righty all the time.
+So I really like him. Uh, that said, like, I think the whole idea of this bloom plan is the reason we're targeting quantity is 'cause we don't know which one of these are gonna win. Like I, I actually, another way of thinking about it is I used to come into the year with a, a really good idea for like, which Cardinals rookie.
+I was excited to see, you know,
+Nate: Mm-hmm.
+Ben: I really hope this guy, Jordan Hicks was one of them. Alex Reyes, [00:27:00] like, over the years, like, I was like, I'm excited to see this specific guy and how he contributes to the system or to the major league team this year. And I would read all the scouting reports and like try to understand everything perfectly. think the idea here is like, man, we're hoping to get like three outfielders like probably a third baseman and like probably many starters and a bunch of interesting relievers outta this group. And we can't tell you who they're gonna be
+Nate: Yeah.
+Ben: just need so many. Yes, I'm still very excited to see Weather Holt this year, but I think one of the cool things is that, um, I'm gonna get to see like a best of like, there's gonna be a bunch of dudes trying to be the next guy who's, uh, who break, who sticks in the outfield, in the majors. And I don't know which one's gonna win. And I, I think that that is, that's something that's more doable now 'cause of the trading strategy they've taken. I I do think it's gonna mean some ugly major league at bats this year. Like, like one of the, the unavoidable downsides of this strategy is, hey, like you do have to crack a few eggs if you're taking like 16 okay eggs and hoping to find [00:28:00] one good one.
+Um,
+Nate: That young pirate's rotation is just, uh, you know, licking their chops, waiting for a run through St. Louis in St. Louis. I'm sure the, the strikeouts will rain
+Ben: The young Cardinals rotation is like, oh, we could face the pirates that, that'll be good for us on a relative basis, like some of these other NL central teams. I would not be that excited to hit it, to pitch against. And I am a little afraid that the Cardinals rotation is gonna give up a lot of
+Nate: uhhuh.
+Ben: uh, because like the top five guys are not bad.
+I, they're all like notable prospects or post type sleeper type dudes, but you need like eight starters and
+Nate: Yeah, there's a, like what is ante, right? Like there's a lot of open.
+Ben: But
+Nate: Yeah. Are we gonna watch another full year? I, I'm, I think it'll be really interesting. What is the leash on all of these guys? If this is a methodical, uh, execution of, of seeing what we have. Um, we got a lot of guys now, and I'm really curious to see what that plan will be.
+[00:29:00] How long does a Nolan Gorman run his consistent 38% strikeout rate or whatever it is? And does he, is he just, we're, we've already made a decision. He's getting third base for half a season. Or will the, you know, will it be pulled quicker? Jordan Walker, some of these guys that we've had around for a while that have not fully clicked, is there a specific plan for them?
+You know.
+Ben: I think they really do, uh, like they really do want to give Walker full-time at bats. I, I don't think it's gonna work if I'm being honest with you. Like I, I have moved on, but.
+Nate: Yeah,
+Ben: The thing is that probabilistically, it's not zero, and this is the time, like this is, I think they screwed him around actually pretty badly during his development. Kind of a, a part of the symptom of the having your feet in both sides of once issue that we were talking
+Nate: Yeah.
+Ben: and I don't even know if that was bad, like they were trying to win the World Series. guy couldn't put the ball in the air. Like of, of course they couldn't play him and he can't play defense. But now that it's way more about figuring out if this guy [00:30:00] is like gonna work out, if he can develop his massive tools into like consistent baseball production, which he hasn't yet. Like, let him play every day. What's the worst that happens? Like, he's really bad for half a year. And we're like, yeah, we kind of guessed that.
+Yeah. Okay. Like,
+Nate: No.
+Ben: that's actually likely, but
+Nate: I've, I've gone so I've been yo-yo so hard on Jordan Walker because I, I can't get it outta my head. The upside, you know, like of all the cardinal of all the prospects that Cardinals have, you could still argue he has the highest upside of any of 'em. Right. And maybe not even close. I guess JJ and Liam Doyle and things like that might argue with that, but still, like the, the dream of your six foot seven monster who just goes out there and breaks and runs faster than everyone is, uh, you know, insane.
+Um, but
+Ben: Aaron Judge. Bat speed.
+Nate: yes. Right. Well, there was just a, I just saw another thing going around like last year's top 15, uh, bat speed and it's like almost [00:31:00] exclusively the best hitters in baseball and Jordan Walker. There's a few other do.
+Ben: Cruz, Jordan Walker, and
+Nate: Yeah.
+Ben: of all stars.
+Nate: Yeah, there's a few duds in there. And even O'Neill Cruise, we'd all be, I think, be pretty happy if we got,
+Ben: that trade.
+Nate: yeah, if we got O'Neill Cruise, just one O'Neill cruise season from Walker, I think we'd all be like, all right, finally something fun.
+Um,
+Ben: Oh
+Nate: but I
+Ben: maybe Walker needs to go to that teacher man hitter. You know, that, uh, hitting instructor that Aaron Judge goes to. You know what I'm
+Nate: Oh sure.
+Ben: St. Louis and no.
+Really? I didn't know that
+Nate: Just get all the big monsters together, all the six foot. So all these giant get Ellie O'Neill, judge.
+Ben: I did see that Walker went to Driveline this winter and I was like, I don't know, man. They usually make you swing harder, like
+we were, uh, kind of following that and it was, it was a lot of talk about like, uh, uh, the hip diving out and the stance being wrong and fixing those things. And I don't know if you've seen him so far in spring training, but he kind of holds the bat a little [00:32:00] more, uh, like parallel to the ground now. So he's made changes based
+I mean, yeah,
+but
+gotta say I love that he's trying to make changes. Like the thing that would be most worrisome to me is if he were doing nothing.
+Right.
+and I'm not a hitting instructor. I can't tell you if these things will work. It's funny that he's going to drive line. The place that is like synonymous with velocity. Um, for a guy who's like, I've got all the pat speed in the
+Nate: Yeah.
+Ben: look, I, it's kind of the same deal. Like doing something is good. Sitting in the position where he was and not changing would've been assigned to me that it was definitely not gonna work out. So yeah. I'm glad. I don't know if it'll work, but also like, I really hope it does.
+So
+Nate: Yeah.
+Ben: they're, I'm glad they're gonna give me a chance
+Nate: Right
+Ben: out.
+Nate: coming. So coming outta last year, my take was, well, all we asked for was a full season of consistency. And then, you know, I'm comfortable with whichever way they go. And we did essentially get a full year of at bats last year from Walker, and he was one of the worst players in baseball. Uh, so I was pretty content with, all right, like, let's move on.
+He's [00:33:00] got an option left. Let's throw him in AAA and say, we'll see you once you carry an OP or a, a WRC plus over a hundred in the minor leagues, which he never did. Um, but I, I'm back on the hype train. They're, they're telling me we're, we're he, you know, they're telling me they're starting him. I want believe so I'm all in on it.
+And, and like you said, why not right? At this point? Um, what's, what's the loss? Uh, we're probably gonna lose a lot of games anyway. And you might as well. Yeah.
+Ben: kind of the thing. Like even if it is just a complete disaster, I don't know, like it's just not gonna cost them that much.
+Nate: It was a complete disaster last year and we kept doing it. So
+Ben: Yeah.
+Nate: even more clear this year.
+Ben: guess they, they played him more than I remembered last year.
+Nate: Yeah,
+Ben: Um, I am, I mean, he's still only batted 400 times, but he was hurt a lot
+Nate: yeah,
+Ben: makes it trickier.
+It,
+Nate: yeah.
+Ben: hard for me to imagine like Nathan Church prying at bats away from Jordan Walker. You
+Yeah, I agree.
+[00:34:00] else real other than Joshua Baez with a huge question mark that is really pushing Jordan Walker out of at bats, at least for the first half of the year.
+Hey, wait, do you guys wanna see, um, one of these new tools I was talking about that shows something interesting about Walker?
+Nate: Would love to.
+Ben: Let me just share the
+So talking
+Okay.
+right here.
+is, um, okay, so this is a comparison of the swing shapes of Jordan Walker and Aaron Judge, if you look over at the stats comparison, Jordan Walker's bats feet is actually higher than Aaron judges. cool.
+Nate: Yeah.
+Ben: Great. Um, these lines like the launch angle, so higher is in the air. You can see a little flyball ground ball thing here. And then how frequently do they square the ball up? How frequently do they just hit it right on the freaking nose? So when judge hits the ball right on the nose, it's like fly balls. All of Walker's. Best contact is like negative 10 degrees, negative 20 degrees grounders, like he's got this hellacious bat speed, but it's all at the bottom. Like it's all at the useless places. And
+Nate: Yeah. [00:35:00] I,
+Ben: ball in the air, no power. Like he doesn't connect it with authority.
+Nate: I think we've seen that too. I mean, if you just think about, uh, his profile and, and just watching him, like the amount of times he's nearly killed an infielder with 115, uh, line drive that's three feet off the ground, um, it plays out.
+Ben: can also see if I put these in.
+what's interesting too is you see the ground ball square percentage for Walker is 63% for judge at 61%,
+judge also squares up flight. Yeah, I see. Yeah. And then it says 48% for For Walker. That's
+Yeah. So if you look here, these circles are frequency, so all of judge's biggest circles are in the air,
+wow. Yeah.
+right? Because he is, he's like, I'm Aaron Judge, so I should hit the ball in the air because it'll leave The park walkers are like all grounders. He just like, he might have this giant swing, but he has not been able to like operationalize it to get the ball in the air. And I, I think that is really.
+Nate: He's too tall.
+Ben: I mean, he, something about his ability is that he's, yeah, [00:36:00] he's hitting down, like you can really see it from this
+Nate: Yeah,
+Ben: And I, I feel like that is, the Cardinals know this, obviously,
+Nate: right.
+Ben: That we might not have had a great way to explain it before. And I'm hopeful that this tool, uh, is useful for stuff like this.
+Um, but that's what's going on, is that yes, like it is easy to only look at bat speed and get carried away because look at this like, the thing that he's doing is not valuable.
+Nate: Yeah.
+Ben: you told me like, I can have the strongest man in baseball, but he only hits grounders, he'd be like, oh, that sucks. Like, what are, what are we doing here?
+And that's basically what's happening. So
+Well, you look at Esoc Perez and I'm sure his Batta, bro, Batta ball profile looks exactly opposite, and he is a better hitter than Jordan Walker, even though he has no bat speed. And Oh yeah. There you go.
+yeah, so like Beretta has no bat speed and, but he hits no grounders and he hits the ball pretty flush in the air. Yeah.
+Nate: Yeah. Full lift and pull guy. We just need like, you know, you can be successful just lifting and pulling it. Walker's just trying to hit it as hard as he can [00:37:00] and it's just going straight down.
+Ben: Yeah, exactly. So that's, uh, that's kind of my take on Jordan Walker is like, I'm willing to let him see if he can get this like, working. Um, but it's not working right now.
+Nate: Yeah.
+Ben: let people tell you that this is just like some expected stats thing or if he keeps swinging hard, the results will come. No, no, right now the results are not coming. He needs to make a change unlock this and he hasn't. So I hope he does, but we really need to see it.
+was Heim bloom on the rays when they were trying to fix Yandy Diaz. I'm trying to, I I think that time I wonder, can you
+It's right around there.
+the Yandy Diaz thing too? Jordan Walker?
+Uh, so one second. Lemme pull this back up.
+Nate: We're going back into the tool folks,
+Ben: We're,
+Nate: uh, and plug for the YouTube channel if you all want to, uh, you know, see
+Ben: with using this thing, but, um, I mean. Look, you can succeed with this profile. Here's Yandy. Um, he is basically just Jordan Walker, except he leaned into it. He was like, oh, I can't square the ball up in the air, so I'll just [00:38:00] like optimize my swing to hit these low line drives.
+Nate: Yeah. The circles are just a little bit higher, right? So He is, he is,
+Ben: higher and they're a little further
+Nate: yeah.
+Ben: he's kind of accepted that he cannot hit the ball in the air. Like look at how crappy his, um, I have this thing that you can add where you see where home runs happen and of them are in the, where home runs happen area, but
+Yeah.
+is a lot closer.
+He's got a lot, like a lot more valuable batted ball contact
+Nate: He ends up around 20 a year too. Right. Which it's, that's valuable.
+Ben: well, what's
+for sure.
+is that his flyball percentage is lower than Jordan Walkers. However, his flyball squared percentage is about double of walkers. So that's even when it, he's like, he, when he gets in that opportunity, he's able to capitalize. He's just not
+Yeah.
+that.
+And um, just 'cause this is like kind of a weird metric. Squared up percentage is how often you hit the ball. Basically flush. So like pretty close to as hard as you can hit it for how hard you're bats swinging. so [00:39:00] it like swinging harder makes these better. Like it is not like this is the only thing that matters.
+Your bat speed matters too. But if you have Jordan Walker's bat speed, this is just a bad shape for it. Like, what are you doing? Um, so that, that's basically what I'm saying there is, are ways to, to make this work even if you can't be a full loft guy he just needs to figure it out.
+Yeah. I
+Nate: it, it seems like he's gonna get it at bats, so.
+Ben: not convinced figuring it out at the big league le level makes the most sense. I, they're like,
+But that's actually a good point. Yeah.
+kind of a narrative of like, what more can he prove at aaa? And the gap between AA and MLB has never been larger, but he also hasn't succeeded at baseball at all for two and a half years or something like
+Yeah. He is. He was even bad in aaa. It's true.
+right. But
+That's a, that's an interesting question that I don't really have a good framework for thinking about, which is like, what level are, is each player best served by [00:40:00] learning ad Because obviously, like if you put a 19-year-old in the majors, that's not helping them develop. If you put a 30-year-old in single A, that's not helping
+Nate: Mm-hmm.
+Ben: So like I don't have a good concept for like, where you should be along this curve. But I, I, I guess one thing, one problem that I have with sticking him back in the minors is like, 24 man.
+Nate: Yeah.
+Ben: been in the majors for three years now. Uh, there's just not a lot of time left. It like if he needs to go spend two years and the minors figuring it out, then, then it's too late, Um,
+Nate: And he might crush because of the age difference. And yeah, he's been seeing Big League spin for a year or two years and he can't hit Big League Spin, but he can hit minor League spin and then we all get excited about Jordan Walker again and he comes up and he can't hit Big League Spin. Sure.
+Ben: do think the, the likelihood, the most frequent outcome here is that it just doesn't work like, like massively the most frequent outcome. And yeah, I, I kind of buy your point about like, I don't know whether it's better to learn it in the majors and the minors, but I, I think I would just assume do it in the majors [00:41:00] because that's what we need him to prove eventually.
+But, uh,
+and,
+like,
+to the point of like, are we gonna watch 600 at at bats of Nathan Church? Are we gonna just do the same thing with Josh Baez with who it also might be too early for and he might strike out a
+yeah,
+Like there's no,
+yeah,
+or Matt Capc, is Mac Apernia gonna take at bats away from Jordan Walker?
+Like none of that really makes sense, I don't
+yeah. I mean, like, I'm looking here and Walker didn't exactly force his way onto the team. Like, uh, when he debuted in 2023, he had been like, okay, in, uh, in double A the year before, but he, he had been a 20-year-old in double A with a. 21% strikeout rate. Even there, like, it wasn't obvious, um, but they needed an outfielder.
+And that was what I was talking about, how in those days it was way, it was much more about like, this roster needs to make the playoffs.
+Nate: Yeah.
+Ben: think if, see a call up, it's gonna be, 'cause that guy's earned it. like that is a real, it's a hard thing for us to do as analysts. I don't [00:42:00] actually know how good any of these guys are.
+Right?
+Nate: Mm-hmm.
+Ben: but they're gonna, they're gonna tell us, um, they, at least they're gonna give us a lot of new information and the Cardinals are finally in a position where they can actually react to that information,
+Nate: Yeah.
+Ben: Um,
+Nate: Yeah. That's a nice change.
+Ben: It's
+Nate: Yeah.
+Ben: got this new information, like, cool, let's try to win 87 games. It's like uhoh, like none of this information's relevant to us, so we have to do the same thing. Um, I'm thinking that this new situation will be good for them. Again, not this year, but, um, I, I think over the, the coming years, this, this is a good plan to get back to like team that. Like wins a bunch of games.
+Uh, I do think that it means that the average minor leaguer they call up will be doing better.
+Yeah. Well also the, the ceiling of the Major League team is lower, so it'll be more impactful, uh, to,
+Oh, yeah.
+to kind of pull it back like 30,000 foot view. I think you, you guys have FanGraphs, have the Cardinals projected at 75 and 87. Uh,
+Yeah. Lemme pull this up
+lot less. I [00:43:00] think Koda had their winds in the 66 range. It
+Nate: I think. 66. Yeah.
+Ben: something
+in the, yeah. In the same way that we don't do a good job of projecting the brewers, Koda does not do a good job of projecting the Cardinals. They've, they've got like a, we miss the brewers every year. Like, I'm, I'm willing to say our model does it wrong.
+yeah, you
+Uh,
+the brewers at 81 and 81 and I,
+yeah, that's not right.
+for me.
+I think I know why it doesn't do it right.
+And I don't know if it'll ever be fixed. It's like a, it's a model shortcoming, but I think Koda has a Cardinals issue kind of the opposite direction, where they're like consistently weird.
+I, I get that like looking at a, like, uh, uh, zips in the projection systems, looking at Bryce Teang and it not really knowing what to do with that kind of guy. 'cause I don't really understand how that guy puts up four or five, six war. He's, he's a
+Yeah,
+but, uh, so anyways, FanGraphs 75 and 87.
+Kota 66 wins. What are you thinking? Like, what are you expect? Are you expecting like slightly [00:44:00] below 500 baseball or are we going to be competing with like the White Sox and the Rockies for the bottom of the, of baseball this year?
+I think like I, no, to the second question, no way. Uh, there's like way more good players on the Cardinals than there are on those teams. Uh, it just, like, you're just saying like, guys who could be on the Dodgers bench, like not very many on the Rockies. Uh, there's a lot of Cardinals who could be on the Dodgers bench.
+Yeah. Like Hunter Goodman maybe. Uh,
+Nate: go. Yeah. You don't know this, but Ben is in Denver. Um, is that he is wearing a Rocky's hat right now. Traitor is purp. The traitor is purple there. Um, but he's forced, uh, being a big baseball fan, but living in Denver, he sees a lot of Colorado.
+Ben: yeah, I mean, like maybe Bretton Doyle's a defensive outfielder on their bench. I don't know. The, the point is like bad teams, like the, the White Sox and the Rockies specifically, the Cardinals have no prayer of being that bad in terms of the talent they put on the field this year. They [00:45:00] just have too many leftover good players.
+I think they've really struggled to tear it down that much. Um, think they're gonna win like 70 to 75 games. I think it's gonna feel it's not even that good. Um, like I think it's gonna feel a little bit out of it from the start. And I don't know how much of that is actually because they're gonna have less chance of winning or because like, no one's gonna know any of the players, you know?
+Like, I'm
+Nate: Yeah.
+Ben: talk to my uncle. Who's a big Cardinals fan, but like doesn't follow it the way I do and he's gonna be like, I don't know, like team doesn't look very good about a auto.
+Nate: Yeah, being in, so I'm in, I'm in St. Louis, and, you know, uh, the Cardinals are an easy everyday conversation with just about anybody passively in St. Louis and the amount of like, well, they traded everyone I liked, you know, like that that is the prevailing answer from someone who doesn't under, you know, follow and, and you know, they, no judgment.
+Everyone's got their own things, but like, who aren't, [00:46:00] aren't viewing what the, what the, the long-term plan is like. Yeah. I mean, ma Mason, Wynn and Yvonne Herrera, and I guess Burleson, you know, other than that, like no, there's not much no household recognition.
+Ben: likes and the people listening are.
+Nate: Even worse, probably.
+Ben: The baseball industry is very excited about JJ Weather Holt. But if
+Yes.
+attention like we are, like who gives a shit about this kid who may or may not be our second baseman?
+Yeah, I mean, to be fair, I actually think that's probably a healthy correction for St. Louis
+Nate: Yeah.
+Ben: in the last few years they've been a little bit delusional about like, they have these guys who are better names than they are players at this point. And they were great players for the Cardinals, but they're kind of the downswing, but their name recognition is still high.
+But look, I'm one of those fans. I, I don't have giant season tickets. I live in San Francisco, but I go fairly often and I hate it when the giants get rid of stars. Like, I'm actually not that. [00:47:00] I, I'm not that tied up in their record the year. I just wanna see like, fun baseball
+Nate: Yeah.
+Ben: And look, Nolan Arenado is a fun baseball player. He's one of my favorite baseball players that I've watched in person many
+Nate: Yeah.
+Ben: uh, from that perspective. Yeah, the cardinal scene's gonna be a little less fun this year, but I think it's. In service of building a more fun team in the long run, I'm okay with it,
+Nate: Yeah, well.
+Ben: there's gonna be less buzz 'cause they're less good and less exciting.
+Nate: Uh, it'll be really interesting to see how it turns out here in St. Louis. 'cause to be fair to like fans and ourselves included in that, like the last five years, all we've heard from the front office is we're going for it this year. This is a team to watch. Like, you're gonna like it. So if you are a casual fan and you're checking in every once in a while and the front office is saying, we like our chances.
+Look at, you know, we got Gold Schmidt, we got ado. Like, why wouldn't you buy in? And I think it was the last year is where that all finally came to a head where the fans started to realize like, wait, like this is thir three years in a row now you've said this is [00:48:00] gonna be a good team and we're out of it by June.
+Uh, and the fan base started to completely dwindle, at least the attendance. Um, I think there are some broader factors, socioeconomic type things impacting that as well. Um, but it, but I think we all know if the Cardinals have a good team, an interesting team, Bush will be filled more or less on a daily basis.
+Ben: Yeah, 
+Nate: but I, I.
+Ben: a smart point.
+Nate: I'm curious if, if now, like everything Bloom is saying now, whether the casual fan is seeing it or not. He's been very clear like, this is gonna be an interesting year. You know, we're not gonna give up any games, but we're probably not gonna win a ton. I will be curious if like a clear direction will be enough to bring fans back in, you know?
+Ben: for sure. Uh, to be fair to the old front office, like I don't think they were wrong to do what they did.
+Nate: Sure.
+Ben: if you, I think the last, I think maybe the last year of it, uh, was a little messy and like a little disjointed, but when they found themselves in the situation of like having ado [00:49:00] and Goldschmidt and being cuspy playoff
+Nate: Mm-hmm.
+Ben: like. think the right thing to do was like start tearing it down. I think they try like they did a really bad job finding pitchers who could work out for them
+Nate: Yeah.
+Ben: kind of torpedoed the whole thing. But I didn't hate that they tried.
+I, I mostly agree with you. I do think that like, and I guess this is well towards the end of the experiment, but the idea of signing like a lancelin as
+Yes,
+developing your pitching analytics, uh,
+I concur.
+building out the spring training facilities was a bad move.
+Nate: Yeah,
+Ben: was the downside. I feel like at the end of this, like before last year I wrote this article that was like a decade of the Cardinals and three graphs or something and it was like age of their position players is like 26 forever and they just, they keep rebuilding that. Even when they signo Eng Goldman, they're not getting that much older 'cause they bring up a bunch of rookies to compliment them.
+And the age of the pitchers is just like going up and up. They have no ideas. They're just signing older and older veterans
+Nate: man. The,
+Ben: stopped working.
+Nate: was it, it was last [00:50:00] year, right? It was like the average age of the starting rotation was 36 years old or something like that. Maybe 20, 24. Um, but
+Ben: I
+Nate: 24. Yeah. Yeah. That was the, that was the linen Gibson here. Yeah. Where,
+Ben: it was like, you can appreciate, um, their plans. I thought the plans were okay, but I agree with you. The execution specifically on the pitching front, w just doomed it all. Like it just
+Nate: yeah.
+Ben: work. They
+Nate: Well.
+Ben: have enough pitching.
+Nate: I think the, the, like my, the criticism that I like, I agree with the plan. I think it was like, well of course go for it. If, if ATO and Goldie click alone, we've got 2022 and you know, you've got two stars and you can augment around them and probably make the playoffs. Um, but it was just like half in, half out.
+Like, we know we need pitching, we're going for it this year, so we're gonna spend 20 million on Kyle Gibson and Lance Lynn, which is a borderline plan at best. And instead of just being like, alright, we're actually going for it and we're going to acquire a meaningful player and not just like a tread water sort of thing.
+Ben: Or like
+Nate: Yeah,
+Ben: some risk,[00:51:00] 
+Nate: yeah.
+Ben: who might work out,
+Nate: Uh, uh,
+Ben: Yeah,
+Nate: Dustin may like, I am, I, we've been a big fan of the Dustin May signing like that would've made sense in 20, 24, 20, you know, an equivalent.
+Ben: lot like these trades where like, you know what's probably gonna happen, Dustin may will not pan
+Nate: Yeah, probably.
+Ben: might happen? Dustin May's great.
+Nate: Yeah.
+Ben: like
+Nate: I.
+Ben: should be making this bet 50 times. Like you think it's a positive expected value bet, just keep making it.
+And I think Bloom is really good at that.
+Nate: Yeah,
+Ben: Where like, I think one problem that front office personnel can get into is that they get attached to guys who have given them success. And like get why, like for the same reason that I said I let I get attached to guys as a fan. Uh. But if you're like, from the portfolio management side of this, if you're really trying to build the best portfolio of 26 baseball players on your team, it's good to be kind of like dispassionate. And I think Bloom does a good job of that, of like making bets that he expects to fail because they might not.
+Nate: yeah, yeah. The Cardinals have employed [00:52:00] even before Bloom, this sort of methodology, uh, towards the bullpen, and they've been quite successful at it for several years. I think the, we've seen it across the board. Other teams are doing it as well. Just grab as many darts as you can throw at a time and, and by the end of the season.
+You should have a pretty good understanding of what you have. And they've had a pretty good bullpen, you know, ranged, but pretty good, uh, for years now. And it's been almost exclusively built from random acquisitions and signings that have worked out.
+Ben: for sure. Uh, I actually, I think that Randy Florist does a good job of
+Nate: Yeah.
+Ben: well. Um, I, I think that the Cardinals have had this way of thinking in many things that have driven them over the years and. Look, we'll see what happens when they come out on the other side and start trying to like, make the playoffs consistently again.
+'cause Bloom didn't do a good job of that in Boston. He, he was a little bit too, like play the odds. Always, always keep splitting one piece into more and building for the future. I think he'll learn it. Like if you're good at games, you understand when it's [00:53:00] time to change tactics. And I, I think he
+Nate: Yeah.
+Ben: but um, yeah.
+I don't know, but the feeling that I got was that John Henry and, and ownership group was kind of and pulling. They were, they were saying, let's be the rays, uh, but also go Stein, you know, Yida or, or
+Yeah. Absolutely.
+like I'm hoping that the DeWitts have a bit more of a, a clear spinning limit, what he can work within, and it's rather than doing
+Yeah.
+yo-yoing
+a really good point. That's a really good point. Because it only works, like your plan is only as coherent as ownership's plan. If their plan is incoherent, yours can't be. How could it be? So, yeah, that's a, that's a good call. Um, like I said, I, I think he's gonna figure it out. It's not that hard, um, like the Orioles have failed this, but most teams who do this kind of building haven't,
+Nate: Yeah. The Orioles, the Nationals have really struggled as they, uh, have now traded most of the [00:54:00] pieces from the Juan Soto trade. They, they're onto this.
+Ben: problem is a, a more, uh, fundamental problem, which is that they don't understand how to rebuild.
+Nate: Yeah. Okay. Yeah.
+Ben: doesn't work, that that's got a real problem. If you don't know how to tear down, it's bad. Um, the building up phase, I, I mean, ironically I'd be kind of interested in going and signing like the Mike Rizzo guys for my try to make the World Series.
+He was really good at that.
+Nate: Sure,
+Ben: Um,
+Nate: sure.
+Ben: good at not being good, and I, I wonder if the new Nats guys will fix that.
+Nate: See,
+Ben: I,
+Nate: that might be where we're,
+Ben: not being good.
+Nate: we're pretty good at not being good. We have to find our angle here, how we can turn that into success,
+Ben: All right.
+Nate: just.
+Ben: I, I think Hein Bloom is an elite, make the best out of not being very good gm. So, uh, you know, just, just become the, the podcasting equivalent.
+get him on the pod. Um, I want to add, I think we're, we're gonna play a game, but I want to ask you one other, uh, question then we can move on. Um, in your Red Sox piece, last week you laid out the three points for evaluating an off season. [00:55:00] You
+Yeah,
+uh, coherence of strategy. I think in this conversation we've talked about that we understand the strategy that the cardinals are,
+under, uh, liquidity and optionality.
+I'm curious to hear your thoughts on that point. And then also the championship, uh, probability distribution,
+Oh yeah, sure.
+the Cardinals are at right now.
+Yeah. So, like you said, coherence of strategy, really coherent. Um, perfect. But this, it's easier to be coherent this way. So grade that on a curve. But they made no mistakes in coherence of strategy to me. Um, they had no, they had a goal. Every move was in pursuit of that goal. Good work. and optionality. I mean,
+They're not spending a lot of money right now. They're spending, I think their major league roster is the second lowest. Uh, so is that liquidity in itself?
+the thing that I think that you're missing here that is missing from a straight discussion of that is that it's also helpful to have good players locked up for a long time.
+Hmm.
+Like if you look at the Mets, because I, I [00:56:00] looked at their off season as well. They did a good job of basically saying, well, our best two players we wanna keep forever and everyone else we might have to move on from in two years.
+So their contracts stay short. So like, obviously if everyone was on a one year deal and could leave after this year, you could be like, oh, that kind of sucks. Um, the Cardinals have so few obvious core pieces of the next contending team that I don't exactly know how it would look. But a really good result here would be like. Wind signs an extension that works for both him and the team. Maybe weather Holt signs an extension after a year in the majors. Like get a few guys who you think are tent poles and lock ' em up for a long time with cost certainty. I, I'd say I'd give 'em an incomplete grade there. Like what they've done is gotten rid of some of the bad liquidity things.
+Cool. That's good. But you should do that. Um, I think they did a really good job. I think that, trades all made a lot of sense and that putting money into them, in most cases was smart. It got them better players and it didn't affect their liquidity. But let's wait and see what they do to [00:57:00] make the shape, the long-term shape of the roster better. And then championship probability distribution, I mean, great. their championship probability in 2026 was already zero.
+right.
+Um, sorry. Like
+Nate: Great.
+Ben: have them at 0.1% now and like
+a sliver, but yeah.
+Nate: Hey, now you're, so, you're telling me there's a chance. All right. I'm back on board.
+Ben: exactly. Um, so I think that looking at that and saying. We want to make our future teams shaped in a way where they have the best chance of spiking a World Series.
+This was good for that. Uh, I think also what you were talking about with Bloom, looking for guys with upside, that's good for that because they don't want a team of like guys next time. You know, one of the big problems the Cardinals had for a decade, two decades was that they had a lot of like good players, but not enough great players to really break through. mean, that's just the classic thing that I think of from like my strongest years of Cardinals fandom is like everyone on the roster is an average player [00:58:00] like, but who's the best of them?
+Nate: Yeah.
+Ben: we talked about this as, which also makes it hard to upgrade because then you have to go acquire a five, six war player to replace a three war player, which is better, but
+Yeah,
+who do you, yeah. Yeah.
+Nate: Yeah, and if you're trying to win, you wanna risk the two and a half war players position for, uh, a rookie who might have more upside, but it's gonna take a while to get there. Yeah. I mean, the amount of, the amount of years the, the zips projection came out and everyone was around two to two and a half war projected, like across the board.
+Ben: Yeah, I guess I would say that is a way of building a team that I think has worse championship probability distribution than you'd expect from the aggregate caliber of the team. And then making your team a little bit rockier and like bumpier up and down is better. Giving yourself a chance to hit more like real difference makers who could be on a World Series team.
+So I really like what they're doing there. I think that the next time the Cardinals are like in the playoffs, it'll probably be a team that looks a lot different than what we're used to, I think in a way [00:59:00] that makes you more likely to win World Series.
+Nate: Interesting. Yeah, I, I'm just. Trying to envision what even a Cardinal's, uh, world, uh, playoff team looks like right now. And it's so hard. Like I, I, like, I'm a big fan of, of the, or, or rather as someone who likes watching prospects, likes the development of the game. I'm really interested, 2026 I think is gonna be a very fun year from that perspective.
+Um, and this sort of figuring out who we keep, who we move on from, I think will be fun. Um, but it's probably not going to be particularly enjoyable on a game for game, uh, basis. So, but we'll see. Um, well, we're go, we're gonna wrap up. Ben. We want to respect your time, but before I, we let you get outta here.
+We're gonna play a little game. Uh, all right. So Ben, you're a writer, you're an analyst. You've spent a lot of time around baseball and the words that surround baseball. So we're gonna play a little game, I call, talking about words. Slang edition. [01:00:00] I've got a list of baseball slang that I pulled from an old mlb.com article from around.
+It was like around 2020. Uh, I'm going to say the slang and then the two of you are going to try to tell me what it is. Okay. What is that referring to? Some of these are easier, some of these are harder.
+Ben: are
+Nate: Uh, first,
+Ben: in or are
+Nate: yeah, so first person to get it right gets a point. If you get it wrong, the other person can guess.
+If you're both wrong, whoever's closest, I will award a point. So,
+Ben: Alright. Good luck Ben.
+So wait, do we buzz in with our
+Nate: Yes.
+Ben: that's
+Nate: Oh, that's confusing. Um, but yeah, let's do that. I think it'll, I think I can, uh, how, how do I even keep to where we got, I'll do, you could say ham bone, um,
+Ben: That
+Nate: as your name and, uh, then we got Ben here. All right. So the first one as I try to navigate my tabs and talk at the same time.
+Alright, what is a [01:01:00] banjo hitter?
+Ben: Uh, uh, hand bone,
+Nate: Okay,
+Ben: I'm just gonna guess. Sounds like a really light, like low power hitter.
+Nate: I'll give it to you. A, a hitter who notches a lot of bloop hits without hard contact
+Ben: we go. I've ne I don't think that that's an actual slang term. I
+I've never heard that one. Yeah.
+Nate: according to mlb.com.
+Ben: Who's
+Nate: And are, are.
+Ben: that,
+Nate: Are they not the arbiters of all baseball? You know,
+Ben: Did Rob Manfred write that?
+Nate: yeah. Again, some of these I've never heard either. Um, but that's part of the fun of it. 'cause you can guess. Um, all right. What is a Bronx cheer?
+Ben: That's a boo.
+Nate: That's a boo. All right. Uh, we're, we're tied up. Um, what is a rhubarb?
+Ben: I, [01:02:00] um, uh, hand bone. I'm just
+Nate: Yeah,
+Ben: on this one. Uh, bloop pit.
+Nate: that is incorrect.
+Ben: I'll go with like a bruise from sliding.
+Nate: Okay. Both incorrect. It is, um, a fight or scuffle. Uh, and so Ben, I'm gonna give it to you 'cause I think you're definitely closest there. Um,
+Ben: point at best. Come
+I would, I would say maybe zero for
+Nate: no, I, hold on, hold on. I said at the very beginning, whoever's closest I'm giving a point to, and you said a bruise. Uh, which you can, which you can.
+Ben: Are we sure this is real slang?
+Nate: I don't know, you know. Again, this is all from mlp.com. I'll, I'll send you the article when it's not
+Ben: I will take it after un under some protest.
+Nate: Uhhuh Uhhuh. Um, all right. Let's see. How about a, [01:03:00] uh, a Baltimore chop?
+Ben: Oh, a hand bun.
+Nate: Okay.
+Ben: Uh, it, oh crap. I'm not gonna, it's like a swinging bunt where it like bounces off a home plate and you try to, you try to run to first.
+Nate: Okay. A ground ball that hits in front of or off of home plate
+Ben: Okay.
+Nate: hops. It says hops over the infielder head. Um, which is,
+Ben: not disagree.
+Nate: yeah. Well I'll give it to you.
+Ben: is going
+Nate: No, I am straight up copying from this mlp.com article.
+Ben: Okay.
+And it's from the pre AI era
+Nate: Yeah. Yeah.
+Ben: Oh,
+Nate: Um, what is a Texas leaguer?
+Ben: Oh, Ben,
+Nate: Yeah,
+Ben: a, like a, a fly ball that lands in front of the, uh, the outfielders. 'cause it's not hit hard enough.
+Nate: that's right. A hit that drops between an infielder and an outfielder.
+Ben: Hmm. Do you have the etymology of that?
+Nate: Uh, no, but I [01:04:00] think Ben probably got it there. Like, you know, a Texas leader didn't hit it hard enough. Um, 'cause they're like.
+Ben: League is a a, not the major league. Okay.
+Nate: Yeah. Yeah.
+Ben: I think that's what it is. I don't know what it's from, but, um, yeah, I've heard that one before.
+Nate: Um, what is A-P-P-E-A?
+Ben: Uh, Ben,
+Nate: Yep.
+Ben: guess that's a throw from the outfield.
+Nate: A uh, batted or thrown ball Traveling at a high speed. You got it? I got a couple.
+Ben: not heard that one either.
+I feel like,
+Nate: I've,
+Ben: say seed way more.
+Nate: yeah, you're right. I, I feel like I've heard p but maybe it was seed. I'm thinking about like a seed from the outfield or, um, a few more for you. What is a bonus baby?
+Ben: Oh, oh, I know this one Ben.
+Nate: Yeah.
+Ben: like a, a short lived thing that happened in the [01:05:00] fifties where something about the way that draft picks were, uh, draft bonuses were done meant that they had to debut in the majors. And so there were all these like very young players that had no reason to be debuting in the majors, getting big bonuses, and then starting their major league careers.
+Nate: Basically it says a young player who received a very large signing bonus, um, before even becoming a pro. Uh, so there you go. Uh, all right. Just,
+Ben: is
+Nate: yeah.
+Ben: a bonus baby by that definition?
+Nate: Uh,
+Ben: it's antiquated and that, it was like, think they, it was specifically the fact that they made these guys debut in the majors and they were just getting like wrecked.
+Nate: Did you, did you guys see, I forget what team it was. Someone just signed a pre-contract with an 11-year-old down in, uh, like Dominican Republic or, or one of the, uh, Latin countries. It was, it was an 11-year-old has signed, it was like $1.8 million or something like [01:06:00] that.
+Ben: illegal or it
+yeah,
+we
+I did see that. It's pretty gross.
+Nate: Yeah.
+Ben: I, looked this up from 1947 to 1965, if you signed for a high bonus, you had to be on the major league roster for at least two years,
+Oh,
+the, the stated purpose was that rich teams couldn't just sign all the best players,
+hmm.
+but it meant that if you were like a somebody who got a big bonus, you would just get destroyed at first.
+Interesting. Going and having to pitch against Stan Mutual or something like that when you're like 17.
+Nate: Yeah.
+Ben: Yeah, exactly.
+Nate: Um, all right. Two more for you. What is a snowman? 
+I'll give you a, they, they provide a sentence here when someone hangs a snowman.
+Ben: Oh, uh, uh, hand bone. Forgot my name for a second. Uh, I'm, I'm gonna guess a hanging breaking ball just based on the context.
+Nate: Nope.
+Ben: What?
+Nate: Uh, one.
+Ben: guess eight runs in an
+Nate: There you go. [01:07:00] Eight runs in, in, in there. You hung a snowman. All right.
+Ben: heard that one, but at least, at least it makes sense.
+Nate: Yeah.
+Ben: That's a lot better than a rhubarb.
+three though. That, that's, I, I have a
+Oh, that's, that's true. That's a good
+Nate: Hmm.
+Ben: I didn't really think about
+Nate: Damn. Hung a
+Ben: runs?
+Nate: damn
+Ben: that'd be
+Nate: wait. That's two next to each other.
+Ben: 80.
+Nate: They, they hung an infinite sign. Placed vertically. Uh, all right.
+Ben: mid inning, they're still scoring runs, Sam.
+Nate: Yeah. Uh, last one. What is a yacker? 
+Ben: Hand, bone. I'm gonna just, I just gotta win a point here. Um, a Yacker is a, um, oh God. A, uh, I, I should, uh, I'll just say something. A a, a pulled home run. A deep pulled home run.
+Nate: Incorrect.
+Ben: Damnit.
+Nate: Ben, you wanna take a guess?
+Ben: I do, I do. Um, [01:08:00] I think it is a, a curve ball,
+Nate: You got it. It's a curve ball through a yacker. All right. Uh, well, Ben, not only were you a fantastic guest, you are also the winner of this game. You smoked Hambone over here, seven to two. I knew bringing, uh, he's dancing folks,
+Ben: Six to two maximum. I think the rhubarb point has to come off the
+Nate: uh, even with, even with it out, uh, you know.
+Ben: of these.
+I feel like Ben's answer was so bad on the rhubarb one. I'm going to take that point. So
+Yeah,
+to six,
+Nate: Okay, sure.
+Ben: That was pretty bad. I mean, I think worse was putting rhubarb in this list of otherwise like somewhat reasonable baseball slang,
+Nate: Yeah. I didn't even throw 'em everything that's in there too. I tried like, hon, honestly, I tried to find the ones that were like the weirdest and, and were, were going to be the hardest to guess. 'cause there's a lot of stuff, you know, moonshot things like that you'd all know immediately. And I didn't want to just be like, who can say the name first?
+Um, [01:09:00] but, uh, but still,
+Ben: connection is faster?
+Nate: yeah. Yeah. Um, but either way, like despite the obscurity of these, uh, Ben, you got a lot of them. Correct. So, uh, great work that is talking about words, um, slang edition. And Ben, we've been talking about your work, uh, this whole episode. And, uh, but if our listeners want to track you down and find more of your stuff, uh, where should they go?
+Ben: Yeah, they should just go to fangraphs.com. Uh, I I headline the page a lot of days. I write a lot there. And if you wanna see the, those tools that I just previewed, uh, they're at fangraphs.com/lab a b, and they'll be live, I don't know, like tonight or something.
+Nate: Nice, nice. Well, this, yeah, this will come out tomorrow. Um, so then they're gonna be up. We had, uh, Dan Za Borsky randomly decide to reveal the, uh, the zip, the, the order in which the zips projections will come out next year on our show, or at least where the Cardinals would be in [01:10:00] that list. And now we got you.
+Ben: FanGraphs news here. Yeah.
+Nate: Just tell your friends, you know, if you want to break any FanGraphs related news, there's a Cardinal related podcast to go onto. Uh, Ben, thank you again so much for your time. Uh, we are huge fans of FanGraphs. I'll skip the pun there again, but, um, we, uh, we, it is our go-to for everything on this, on this show when we talk about stats and whatnot.
+So, uh,
+Ben: for having me
+Nate: yeah, hu
+Ben: guys. This was really
+Nate: huge pleasure to have you. Thank you.
+Ben: Thanks guys. See you later.
+Nate: All right, ham bone. Um, thanks again to Ben. Um, we really, really, uh, appreciated his time. Um, it always surprises me whenever we get someone like with such credibility on the show. Um, but I think it went well.
+ben: Such credibility and at least he acted like he didn't hate us which boom win
+Nate: Yeah. Yeah, maybe a, maybe a performance. I don't know. But we, it was, uh, it was a good conversation, but we got it. We got [01:11:00] to, before we get into all of our takeaways, we do wanna remind our listeners that this show is listener supported on Patreon. patreon.com/talking about birds. If you wanna support the show, the time and effort it takes to, uh, bring it to you every single week.
+And, uh, you know, we're looking at bringing on more guests and things like that, expanding the show. If you wanna support that, uh, consider joining the Patreon. Uh, if you join the Patreon. You get access to our private discord server. It's the bird score. That's where people are. Uh, the roasts are coming in right now.
+We got a lot of, uh, great roasts for opening bits, and you can certainly contribute there or just use it as a resource to talk to other Cardinal fans. Um, and, you know, really talk about breaking news as it's happening. Uh, shout out to all of the patrons. Um, we really appreciate you. Uh, we also appreciate anyone who takes the time to leave a review on their favorite podcast platform.
+Uh, and of course. Baseball season, it's in the air hand bone. So if you're talking to your friends and your family [01:12:00] about the cardinals and baseball, um, throw a wreck. Give 'em an old, talking about birds, recco, we appreciate that. Um, hand, bone. Where else can people find us online?
+ben: Yeah we are on all these socials You can find us at Blue Sky Instagram We have a TikTok You can watch this episode on YouTube if you'd like to look at us Uh you can find all that information T-shirts And more@talkingaboutbirds.com Of course you could email us questions or whatever You got to talk about birds@gmail.com and you can call us and leave a voicemail or send us a text message to 8 4 8 48 birds That's 8 4 8 4 8 2 4 7 3 7
+Nate: Eight four. 8 48 birds.
+ben: Wow
+Nate: What was your, uh, takeaway from the, from the conversation with Ben? Any highlights or anything that you wanted to dig in a little bit on?
+ben: I thought just like uh you know we've been kind of talking around this [01:13:00] but just understanding that we are not uh being crazy Our heads aren't buried in the sand About kind of the process that bloom and goons are are taking to kind of methodically rebuild the team gathering as many Uh uh prospects as possible as opposed to I think you and I have been pretty keen on the idea of let's go get a Brandon Clark a a tpe to a sinja rather than going out and you know placing all of our eggs in I think he referenced Roman Anthony but that kind of basket
+Nate: Yeah.
+ben: you know we talked about the idea of having 53 prospects that are worth talking about right now I think that that number's only going to grow over the next year or so So I think just like di digging into that getting his perspective on that um was was really interesting And then obviously like the uh the little run that we went on uh regarding um The Batta Ball profile and
+Nate: Yeah.
+ben: of Jordan Walker And of [01:14:00] course getting a look at the the new fan grafts graphs uh was pretty exciting Um but it it makes you think you know like he does have we know this he has the raw tools make to to become a very good if not great hitter in MLB Um there's just a tweak that needs to happen He could be He could have an Aaron judge shaped batting ball batted ball profile But uh obviously easier said than done
+Nate: Right.
+ben: but yeah I I thought that that was great And it was really just like hearing you know his he a national writer a guy that's paying attention to you know he he's writing uh articles about MLB once or twice a week every week hearing his perspective on the Cardinals process being solid and and something that he would rate out fairly highly
+Nate: Yeah, because I, that had been one of my, um, I wouldn't say it's concern, but, um, you know, it was part of why I, I brought it up in the discussion [01:15:00] was the Cardinals did not really acquire a blue chip. Prospect at all in this rebuild. Um, and to hear his thought process and, and frankly like the justification on, not only is that like a good move, but it's really the smart move right now considering the price of these guys, uh, was certainly gratifying, you know, um, to, to hear that perspective and, and reinforcing our takeaway that.
+It's been a very good off season. It's been a clear and consistent off season for the Cardinals. Um, you know that part at the end where he was saying like, no, no notes, no errors on the, the moves that have been made. Of course, who knows if they work out right? That will be the ultimate judgment of this.
+If the Cardinals properly evaluated the return for these trades and developed them appropriately, all, all independent, different things that will be as, you know, figured out over the years. Um, but as far as decision making of what [01:16:00] you can do, of what's in front of you, it is felt really good.
+ben: When you you think about it he said you know you need he was referencing our our prospect cache Right now Four or five guys make it to the big leagues and become impactful You you have a a pretty good operation We're talking about 10 of these Prospects that are being ranked at the beginning of 2026 you know some guys are gonna fall in and fall outta this and and and we're gonna draft a shitload of guys here very soon You think about if 10 of these guys elevate themselves into being above average major league players that does not sound impossible And the timeline of that should be two or three years
+Nate: Right.
+ben: just feels like we're doing all the things that should Really set the cardinals up to be a little bit more competitive next year A lot more competitive the year after And then we're talking about bringing in real free agents augmenting this roster and we'll fucking just take off after
+Nate: Right. Yeah. I mean if you just think about the math of that, so you get five or [01:17:00] so from that current 53, you add them to, uh, the. Um, what? I don't know. The current cardinal list. You'd be like, all right, Yvonne Herrera Mason win. Um, the bullpen, you know, there's pieces that burley, there's pieces that are com competent, major league pieces right now that puts you at like nine or 10.
+Like average to or above average players, uh, which is an incredible core. You go in, you sign a five, six war player or two. And then along the way we also, um, there's going to be guys that are not on this prospect list right now that, uh, are that impact the, the big league in an unexpected way. And you start to see, okay, there's the team, you know, you got.
+10 to 15 above average players with a couple of them being hopefully stars and like, that's what most, most competitive teams look like. Of course, not teams like the super teams like the Dodgers and whatnot, but look at every other major league team that is, [01:18:00] uh, even like the Phillies, right? It's like they got, yeah, they got like eight guys that you're like, all right, they're all really good.
+And then you have enough role players around them and you're, you're competitive.
+ben: Braves Great Yeah there's a lot of very successful teams blue Jays that are doing that thing and I think the Cardinals are on track
+Nate: Yeah. Yeah. So, uh, again, thanks to Ben. Um, really cool. We'll maybe have him on again and in a few months and we can talk more about how the development has actually been going. Um, and we've talked about it too. We are gonna do another episode sometime soon to, with someone to dig in on prospects even further.
+And talk about what, you know, some of the guys that we haven't covered just yet. Um, but I told you this, Ben, uh, your guy, Danielle, Daniel, the, the, I've been seeing more and more heat for him, but you were the first that I heard talking about him, so
+ben: you he
+Nate: Yeah, we'll see.
+ben: he's a little old He's a little slow by the way he's 20 Uh I think he [01:19:00] is going
+Nate: Oh, gross.
+ben: he's on a rocket ship Nathan we're gonna
+Nate: Yeah.
+ben: watch this kid
+Nate: Okay. Um, well, let's, uh, let's go into, well, any other takeaways from, from the Ben conversation, or should we move on?
+ben: No I I uh that was fun Um and I I guess I'll just plug like I'm a FanGraphs member
+Nate: Mm-hmm.
+ben: you should It's $20 a year Uh that's how Ben is allowed to do the things that he does uh support FanGraphs They're great
+Nate: Yeah. Uh, all right. We got a little bit of League News and then we're gonna get outta here.
+ben: Nick Castanos Nate we gotta talk about Nick Castanos Um I I guess I'll just do a quick TikTok of of what happened here Uh It sounds like uh the Phillies fell out of love with Nicholas Castanos uh sometime last year when he got pulled for uh defense um and then went into the dugout grabbed a beer and depending on who you listened to it sounds like Nick Castanos [01:20:00] said something that pissed off every single person In the Phillies organization we don't know what that was Castanos himself says that he was just being a bit of a pill but it was also reported that he said something that offended the entire clubhouse and front office don't know what it was Uh they ended up dropping him just straight cold dropping him and his $20 million a year contract Uh and then a couple of days after that The Padres decided to pick him up He is now a padre for League minimum for this year Uh and it looks like according to spring training uh videos on Instagram and stuff like that he is trying out first base Um but kind of a wild thing for a guy of his stature and salary and time in the game to just be of dropped and you know I'm sure it wasn't only for what he said He's also hasn't been a great baseball player for quite a while Um but [01:21:00] kind of a wild story
+Nate: Yeah, I think that last part is a key factor in this whole thing because, uh, all right, let's go. Here's 2025 worth negative 0.6 F 4 20, 24 worth point. Two F four. So over the last two years at the major league level with uh, 659 at bats and 589 at bats, he is worth negative 0.4 F four. The year before that worth 1.3.
+The year before that, worth negative 0.2. So over a. Five, a four year, uh, as a starter in the majors. He was worth just above zero war. Right. So everything starts at that.
+ben: and usually we talk about that kind of guy Oh that's a coach He's got coach written all over him He is hung around in the big leagues He accrues almost zero war Those guys are [01:22:00] usually easy to be around and nice and smart then you have somebody like Nick Castanos who is none of those things
+Nate: His best season in the majors was 2.34.
+ben: That to
+Nate: He,
+ben: great offensive season just drug down by his lack of
+Nate: he's a bat.
+ben: flexibility and
+Nate: Yeah, he's a bad defender.
+ben: Yeah
+Nate: and that's not helped by moving to dh, you know, as far as a, uh, value accrual and it won't be helped by moving to first base.
+ben: Now
+Nate: Um, so I say all that to say. My read on it was he had a bad player who was probably said something about the other players being the problem of them not winning.
+And it made everybody mad 'cause it's like. You, you're paying, you're being paid a hundred million dollars and you're one of the worst players on the team.
+ben: Yeah
+Nate: don't get to tell Trey Turner, Bryce Harper, Zach Wheeler, you know, perennial MVP [01:23:00] candidates and Cy Young and whatnot, that there's, that, like, the appropriate answer is he's like, I need to be better.
+Is the only thing he could say that would, that is a reasonable thing to be saying while you're mad. Um, so I'm guessing it's that I.
+ben: I do think the hubris of being one of the least valuable players in MLB and cracking a PTE on the bench is optically poor
+Nate: That's what I'm, it's all about, that's why I start, it's all about him being bad because there's, like, no one gives a shit about him opening a beer in the, in the dugout. If he was a.
+ben: he was putting up four or five war
+Nate: Yeah. They'd be like, Hey, come on Nick. Put that away, or whatever. Like, ha ha ha, wait for after the game, bro. If we're gonna ch some brew skis you.
+Yeah. Like, none of that matters. But he's being a little whiny, whiny little guy and he, he cracks a beer and I was like. Get the fuck outta here. So, uh, it sounds like he sucks. I was kind of surprised that anyone picked him up though. I do. I know. You know, he has had offensively valuable seasons, [01:24:00] minimum league minimum.
+The Padres will, will, will take anybody, you know, so,
+ben: and I'm
+Nate: yeah.
+ben: like you know the Padres they have Xander Bogart's they have Manny Machado Will those guys just smack him around if he gets outta line Like those those are you know stalwart leaders of organizations that have been really good for a really long time and with something else we learned about Castanos is that he you know he uh uh he kind of looks down on non-baseball people It it was kind of reported and I
+Nate: Yeah.
+ben: players like Machado and and Bogarts are gonna be able to maybe tamp down those personality Um Idiosyncrasies that Castanos brings to the table
+Nate: Yeah, maybe, but I mean like he, you know, he had a 90 WRC plus last year, 1 0 4, the year before 1 0 8, and then 95 the year before that. So, you [01:25:00] know, four years in a row.
+ben: place to hit
+Nate: Yeah.
+ben: I
+Nate: Four years in a row league average hitter with bad defense. Like, I mean, I know again, you can see, yeah, he had some, uh, high WRC pluses five years ago.
+ben: Yeah
+Nate: but like, come on. You know, but you're right. I mean, maybe like, I, I guess ultimately I'm not too surprised someone's taking a flyer on him. I was just a little surprised that it was a competitive team. Um.
+ben: Gavin Sheets as the projected starting uh first baseman there You know maybe he is going to dh And play first base against tough lefties And and you can get Gavin Sheets who is a great platoon hitter Not a not a great lefty left hitter Maybe they're just gonna take a flyer on that That's the only thing that could really make sense Also he is league minimum Wouldn't be surprised if they drop him like a sack of potatoes you know in the first
+Nate: Yeah.
+ben: if he's not performing
+Nate: Yeah. Yeah. So,
+ben: All right
+Nate: but you know what? I think we're [01:26:00] all a little, uh, Gavin Sheets won 11 WRC plus last year, so 20% better than, uh, Nick Castano's, and that's his, uh, on both sides. Uh, I think, you know, at least the car, the quick cardinal spin on it. Jake Westbrook, you know, you gotta be laughing out there somewhere.
+This bozo, uh, you know, flexed on me super hard over nothing. Um, you know, and then, uh, now he's getting cut. He's kind of being laughed at by everybody.
+ben: Yeah Um well let's go from one uh great first baseman to another Uh the Yankees have resigned A Cardinal's legend Paul Goldschmidt
+Nate: Yeah.
+ben: $4 million Um He is kind of I I I the only thing that really makes sense is he is gonna spell Ben Rice when Ben Rice is either catching or taking the day off Uh Paul's still a very good hitter against lefties still a good defender He had a great start with the Yankees last year um and then kind of fell off for the last
+Nate: Yeah.
+ben: months or something like that But uh it's [01:27:00] I I like this fit for Goldie I think it makes a lot of sense They're a a championship caliber team He gets to take another whack at the pinata Um you know there are a lot of things I like this Yankees team a lot better going into the season with Ryan McMahon you know at third base Jazz Chisholm being healthy Paul Goldschmidt not being a tent pole of the team but just like a kind of a a bench player Um role player type guy Um but I like it for Paul I think it's fun Um and and good for him
+Nate: Yeah. Yeah, I agree completely. I wasn't, it, it made sense to me kind of. I think most people were expecting it if they were gonna sign someone like this and you know, he was there, he knows where the bathrooms are. Um, and maybe in a platoon role, he'll be effective the whole season.
+ben: You know they got bednar and doval the whole like they they could be a good little team Well not little they're huge They're
+Nate: They're monster.
+ben: but
+Nate: Yeah.
+ben: could be a good team this year Um or or a a special team this year they're [01:28:00] gonna be good Uh the Astros and Blue Jays swap Jesus Sanchez for Joey Luper Fido uh which is just because the Astros traded away Joey uh what was that six 12 months ago Or something like that
+Nate: Yeah. To the Blue Jays.
+ben: go back and get their guy Um and another team is taking a crack at the old Sanchez Batta ball profile Um
+Nate: Yeah.
+ben: of a funny move I don't Love what the Astros have done off season Their their team makeup of confuses me overall I do think you know with those two things being said Jeremy Pena YDA and Alvarez and Hunter Brown really pave over a lot of weirdness that the
+Nate: Yeah.
+ben: They they they have a really really good core but um Funny team funny build Joey Lou [01:29:00] proto is probably gonna start for them And um just it's funny when a guy when a team trades away a guy and then almost immediately quires him
+Nate: Yeah, I was surprised by this move too from a Blue Jays perspective. Um, you know, they lost Santander again for. Um, most, at least half the season, I think. And, um, in some ways Jesus Sanchez is just a poor man's, uh, Santander, um, uh, if you squint, you know, um, but at the end of the day it's a fourth outfielder type thing, um, because I think they're just gonna have Barger playwright field most of the time now.
+Um, and I think that makes a lot more sense than Hayes. Sanchez, uh, I, I, from what I read is this was more of like a salary thing, and the, and the Astros were just looking to get away from the, like 7 million, um, that Sanchez was owed. And the Blue Jays are flush, as we know. They've been trying to bid on everybody.
+So 7 million for a little bit more backup is whatever. Um, on the Astros standpoint, they, [01:30:00] they're, they're GI, I forget their name right now, uh, is has said like, we're not done.
+ben: Dana
+Nate: Um.
+ben: think
+Nate: Yeah. 'cause they, they have a, in like Esoc days, we talked about him on the thing with, uh, with Ben, he's in like the perfect ballpark for them.
+Lift and pull guy, he could hit 40 home runs, uh, if he's healthy. And right now he doesn't have a starting position. He's,
+ben: benching Christian Walker cause you paid him all that money and he had a a kind of low key good season last year and you just acquired Carlos Correa again
+Nate: yeah.
+ben: Yan Al Yan Alvarez should stay at dh maybe play some left field sometime but yeah they they either I I I think what is more likely to happen is the Esoc parade is going to get traded
+Nate: Yeah.
+ben: just because other teams will want him And I think it's a lot harder to trade a Christian Walker
+Nate: Yeah, he just has such a specific batted ball profile that Real is really ballpark dependent. And you could see it when he played, uh, with Chicago, it was not a good ballpark for him, and he did [01:31:00] not perform well. He gets straight into Houston and he immediately, you know, he hits 20 home runs in like 300 at bats or whatever.
+ben: Yeah
+Nate: Um, but he got hurt and now they're not prioritizing him, which, you know, I don't know. I'm sure there's some metric they know that I don't know, but it seems to me like they should be making space for him, um, or get him to play. Outfield or something, but I don't know.
+ben: trade Altuve I
+Nate: Yeah.
+ben: high very surprised if you trade Carlos Correa after
+Nate: Again, yeah.
+ben: And unfortunately like I said I don't think anyone's gonna take Christian Walker The other option is to put ES Peres at second base but they're Seemed to be dead set on moving Altuve back to second base
+Nate: Yeah.
+ben: went horribly last year So yeah this they also don't don't forget about uh cam Smith who should probably be starting
+Nate: Yeah.
+ben: days who hits the ever-loving shit out of the ball Like yeah There're a weird team
+Nate: Yeah, but they said they're not done, so we'll see.
+ben: Yeah Yeah And again I I uh I was digging into Hunter Brown's numbers the other
+Nate: [01:32:00] He good?
+ben: he
+Nate: He good?
+ben: really nice ear
+Nate: He good.
+ben: Um alright Uh final piece of news uh Jeff Passan geez Jeff Passin reported on Twitter a couple of days ago that the M-L-B-A-M-L-B-P-A executive Director Tony Clark has resigned after an internal investigation and revealed that he had an inappropriate relationship with his sister-in-law who had been hired by the players union So it sounds like they had a player's union meeting uh that ended abruptly And I'm guessing that meeting was just to tell Tony Clark Hey
+Nate: We gotcha.
+ben: you know we don't like what you're selling Um we have a very important uh negotiation that's coming up and uh you're not our guy
+Nate: You know, we don't get a lot of these sort of salacious, uh, you know, like the, the ml the, uh, M-L-B-P-A, uh, leader is, has to resign and shame because of a, [01:33:00] uh, a situation with his sister-in-law and her getting a job. You know, it's like, all right. It's kind of fun. I mean, it's terrible because they're, they're about to go into one of the highest stakes, um, you know, negotiations in, in a long time.
+And, uh, you gotta bring
+ben: real
+Nate: what.
+ben: don't don't have sex with your sister-in-law I I feel like that's a pretty easy Now now is it interesting that um the players association who I have to assume is filled with Philanderers uh you know they're baseball players They're
+Nate: Uhhuh,
+ben: uh for
+Nate: they go from port to port.
+ben: they go from port to port They're basically pilots
+Nate: Yeah.
+ben: it is funny to me that they have weighed this moral judgment at
+Nate: Uhhuh.
+ben: crucial time but uh I
+Nate: Well, it's the, I assume it's the job getting. 'cause if it was just simply that, [01:34:00] um. The, the, the act had occurred. It would be like, okay, maybe that's a problem, maybe not. But the fact that she was another member of the pa.
+ben: right right Yeah And they
+Nate: Yeah,
+ben: together or whatever was happening
+Nate: yeah.
+ben: I think it's it's definitely agreed but it is like It it is a moral judgment Unless he was like funneling her fun I can't imagine I I guess we'll find out more
+Nate: Yeah.
+ben: it's a fascinating story and I agree Uh we don't get this much high drama that is relatively harmless as opposed to you know the Alish Chapmans of the world and everything
+Nate: Right, right, right. Yeah. Yeah. There's certainly no shortage of, um, like horrible news stories about these people doing terrible things. I don't want to, uh, discount that, but this one just felt a little like, oh yeah, it's like a little more soap opera. A little more, yeah, yeah, yeah, yeah, exactly. [01:35:00] Um. So, all right.
+Well, uh, I, I, I don't know, we, we've been promising like a deep dive on the upcoming CBA and, and like the ramifications of all of it. Um, and we kept kinda keep hitting it at different angles. Um, so we'll we need to do that sometime soon. Um, but frankly we have like a year before all of it really kicks off, so, and I suspect we'll have plenty of time to talk about that, uh, when that happens.
+Um.
+ben: I think we're gonna have a lot of Show outline space around that time so we'll we'll follow
+Nate: we'll see. So, but that is gonna do it for this episode. Thanks again to BL Ben Clemons. Um, and we will be back next week. As always, please check out the links in all of our different things@talkingaboutbirds.com. Consider join the Patreon. Uh, shout out once again to the patrons. Um, and that's gonna do it.
+So until next week, go Cardinals.
+ben: Let's go Bens
+Nate: [01:36:00] Boo.

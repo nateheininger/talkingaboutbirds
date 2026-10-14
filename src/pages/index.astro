@@ -1,0 +1,142 @@
+---
+import Base from '../layouts/Base.astro';
+import EpisodeCard from '../components/EpisodeCard.astro';
+import ListenButtons from '../components/ListenButtons.astro';
+import { getShow } from '../lib/feed';
+import { SITE, PATREON_URL } from '../site.config';
+import { url, episodePath } from '../lib/urls';
+import { formatDate, formatDuration } from '../lib/text';
+import { podcastSeries, website } from '../lib/schema';
+
+const show = await getShow();
+const [latest, ...rest] = show.episodes;
+const recent = rest.slice(0, 6);
+const firstYear = show.episodes.at(-1)!.pubDate.getFullYear();
+const totalHours = Math.round(show.episodes.reduce((n, e) => n + e.durationSeconds, 0) / 3600);
+---
+
+<Base
+  title="Talking About Birds: A St. Louis Cardinals Podcast"
+  description={SITE.description}
+  path="/"
+  jsonLd={[website(), podcastSeries(show.episodes.length)]}
+>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow">A weekly St. Louis Cardinals podcast</p>
+        <h1>Talking About Birds</h1>
+        <p class="lede">{SITE.tagline}</p>
+        <p>
+          Nate Heininger and Ben Simorka break down the St. Louis Cardinals every week: the roster, the prospects,
+          the trades, the front office, and whatever else comes up along the way.
+        </p>
+        <ListenButtons only={['Apple Podcasts', 'Spotify', 'YouTube']} />
+        <ul class="stats" aria-label="Show stats">
+          <li><strong>{show.episodes.length}</strong> episodes</li>
+          <li><strong>{totalHours}+</strong> hours</li>
+          <li>since <strong>{firstYear}</strong></li>
+        </ul>
+      </div>
+      <img
+        class="pixel cover"
+        src={url('/cover.png')}
+        width="640"
+        height="640"
+        alt="Talking About Birds artwork: pixel-art Nate and Ben in front of the Gateway Arch"
+        fetchpriority="high"
+      />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><h2>Latest episode</h2></div>
+      <article class="card latest">
+        <p class="eyebrow">
+          Episode {latest.number} · <time datetime={latest.pubDate.toISOString()}>{formatDate(latest.pubDate)}</time> ·
+          {formatDuration(latest.durationSeconds)}
+        </p>
+        <h3 class="latest-title"><a href={url(episodePath(latest))}>{latest.title}</a></h3>
+        <div class="prose" set:html={latest.descriptionHtml} />
+        <audio controls preload="none" src={latest.audioUrl}>
+          <a href={latest.audioUrl}>Download the episode (MP3)</a>
+        </audio>
+        <p class="latest-links">
+          <a class="btn btn--plain" href={url(episodePath(latest))}>Episode page &amp; notes</a>
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Recent episodes</h2>
+        <a href={url('/episodes/')}>All {show.episodes.length} episodes →</a>
+      </div>
+      <div class="grid">{recent.map((ep) => <EpisodeCard episode={ep} />)}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cta-grid">
+      <div class="card cta">
+        <h2>Call the bird phone</h2>
+        <p>
+          Question, comment, hot take, or opening bit? Text or leave us a voicemail and you might end up on the show.
+        </p>
+        <p><a class="btn btn--red" href={`tel:${SITE.phone.digits}`}>{SITE.phone.display}</a></p>
+      </div>
+      <div class="card cta">
+        <h2>Support the show</h2>
+        <p>
+          Talking About Birds is listener supported. Back the show on Patreon and get into our private Discord.
+        </p>
+        <p><a class="btn" href={PATREON_URL} rel="noopener">Support on Patreon</a></p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    background:
+      linear-gradient(180deg, transparent 70%, rgba(25, 26, 36, 0.12)),
+      var(--red);
+    color: #fff;
+    border-bottom: 4px solid var(--ink);
+    padding: 3rem 0 3.25rem;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 2.5rem; align-items: center; }
+  .hero h1 { color: var(--gold); text-shadow: 4px 4px 0 var(--ink); font-size: clamp(2.4rem, 6vw, 4rem); }
+  .hero-eyebrow { color: #ffd9e1; }
+  .lede { font-size: 1.3rem; font-weight: 700; margin: 0 0 0.75rem; }
+  .hero p { max-width: 36rem; }
+  .hero :global(.listen) { margin-top: 1.5rem; }
+  .cover {
+    width: 100%; max-width: 420px; justify-self: end;
+    border: 4px solid var(--ink); border-radius: var(--radius); box-shadow: 8px 8px 0 var(--ink);
+  }
+  .stats { list-style: none; padding: 0; margin: 1.75rem 0 0; display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.95rem; color: #ffe6eb; }
+  .stats strong { font-size: 1.3rem; color: #fff; }
+
+  .latest { padding: 1.5rem; }
+  .latest-title { font-size: 1.5rem; }
+  .latest-title a { color: var(--text); }
+  .latest audio { margin: 1rem 0; }
+  .latest-links { margin: 0; }
+
+  .alt { background: var(--surface-2); border-block: 3px solid var(--border); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: 1.25rem; }
+
+  .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .cta { padding: 1.5rem; }
+  .cta p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 760px) {
+    .hero { padding-top: 2rem; }
+    .hero-grid, .cta-grid { grid-template-columns: 1fr; }
+    .cover { justify-self: start; max-width: 150px; order: -1; box-shadow: 5px 5px 0 var(--ink); }
+  }
+</style>

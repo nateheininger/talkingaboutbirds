@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getPlayers } from '../../lib/players';
+import { url } from '../../lib/urls';
+import { breadcrumbs } from '../../lib/schema';
+
+const players = await getPlayers();
+---
+
+<Base
+  title="Cardinals Players | Talking About Birds, a Cardinals Podcast"
+  description="Find every Talking About Birds episode about your favorite St. Louis Cardinals players, prospects, and front office figures."
+  path="/players/"
+  jsonLd={breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Players', path: '/players/' }])}
+>
+  <div class="wrap narrow page">
+    <h1>Players</h1>
+    <p class="muted">Cardinals players, prospects, and front office figures, with every episode where we talk about them.</p>
+    <ul class="players">
+      {
+        players.map((p) => (
+          <li>
+            <a class="card player" href={url(`/players/${p.slug}/`)}>
+              <span class="name">{p.name}</span>
+              <span class="count">{p.mentions.length} episodes</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Base>
+
+<style>
+  .page { padding-top: 2.5rem; }
+  .players { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: 0.9rem; }
+  .player {
+    display: flex; flex-direction: column; gap: 0.15rem; padding: 0.85rem 1rem;
+    color: var(--text); text-decoration: none; transition: transform 80ms ease, box-shadow 80ms ease;
+  }
+  .player:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--shadow-color); }
+  .name { font-weight: 700; }
+  .count { font-size: 0.85rem; color: var(--muted); }
+</style>

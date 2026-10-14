@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/urls';
+---
+
+<Base title="Page not found | Talking About Birds" description="That page doesn't exist." path="/404/" noindex>
+  <div class="wrap narrow page">
+    <h1>Swing and a miss</h1>
+    <p>That page doesn't exist. It may have been traded for a player to be named later.</p>
+    <p class="btn-row">
+      <a class="btn" href={url('/')}>Home</a>
+      <a class="btn btn--plain" href={url('/episodes/')}>All episodes</a>
+    </p>
+  </div>
+</Base>
+
+<style>
+  .page { padding: 4rem 1rem; }
+</style>
