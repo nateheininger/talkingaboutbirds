@@ -10,7 +10,7 @@ interface Props {
 const { episode: ep, headingLevel: Heading = 'h3' } = Astro.props;
 ---
 
-<article class="card episode-card">
+<article class="card card-link episode-card">
   <p class="eyebrow">Episode {ep.number} · <time datetime={ep.pubDate.toISOString()}>{formatDate(ep.pubDate)}</time></p>
   <Heading class="title"><a href={url(episodePath(ep))}>{ep.title}</a></Heading>
   <p class="summary">{ep.summary}</p>
@@ -24,20 +24,15 @@ const { episode: ep, headingLevel: Heading = 'h3' } = Astro.props;
 <style>
   .episode-card {
     position: relative;
-    padding: 1.1rem 1.2rem 1rem;
+    padding: 1.15rem 1.25rem 1.05rem;
     display: flex; flex-direction: column; gap: 0.35rem;
-    transition: transform 80ms ease, box-shadow 80ms ease;
   }
-  .episode-card:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--shadow-color); }
-  .episode-card:has(a:focus-visible) { outline: 3px solid var(--gold); outline-offset: 3px; }
+  .episode-card:has(a:focus-visible) { outline: 2px solid var(--red); outline-offset: 2px; }
   .title { margin: 0; font-size: 1.12rem; }
   .title a { color: var(--text); text-decoration: none; }
   .title a::after { content: ''; position: absolute; inset: 0; }
   .title a:focus-visible { outline: none; }
+  .episode-card:hover .title a { color: var(--accent-text); }
   .summary { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
   .meta { margin: auto 0 0; padding-top: 0.4rem; font-size: 0.85rem; display: flex; gap: 0.5rem; align-items: center; }
-  .tag {
-    font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
-    padding: 0.1rem 0.4rem; border: 2px solid var(--border); border-radius: 3px; background: var(--gold); color: var(--ink);
-  }
 </style>

@@ -1,42 +1,46 @@
-/* Palette pulled straight from the show artwork. */
+/* Cardinals red as the accent, navy and neutrals for everything else.
+   The pixel art lives in the show artwork; the rest of the site stays out of its way. */
 :root {
   --red: #bf1d3e;
-  --red-deep: #8f1430;
-  --ink: #191a24;
-  --slate: #425068;
-  --slate-2: #586b8c;
-  --sky: #93a4c2;
-  --gold: #ffbb3d;
-  --orange: #f08a24;
+  --red-hover: #a3162f;
+  --navy: #1c2433;
+  --navy-2: #2a3448;
 
-  --bg: #f6f3ee;
+  --bg: #faf9f7;
   --surface: #ffffff;
-  --surface-2: #eeeae3;
+  --surface-2: #f2f0ec;
   --text: #191a24;
-  --muted: #555b6e;
-  --border: #191a24;
+  --muted: #5c6070;
+  --line: #e4e1db;
+  --line-strong: #cfcbc3;
   --link: #a8173a;
-  --shadow-color: var(--border);
-  --shadow: 4px 4px 0 var(--shadow-color);
-  --shadow-sm: 3px 3px 0 var(--shadow-color);
+  --accent-text: #a8173a; /* red that passes contrast as text */
+  --shadow: 0 1px 2px rgba(25, 26, 36, 0.05);
+  --shadow-hover: 0 8px 24px rgba(25, 26, 36, 0.1);
 
   --font-body: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-pixel: 'Pixelify Sans', ui-monospace, monospace;
-  --radius: 4px;
+  --font-display: 'Barlow Condensed', var(--font-body);
+  --radius: 12px;
+  --radius-sm: 8px;
   --wrap: 72rem;
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #12131a;
-    --surface: #1c1e29;
-    --surface-2: #252836;
+    --navy: #182031;
+    --navy-2: #26304a;
+    --bg: #111318;
+    --surface: #1a1d24;
+    --surface-2: #20242d;
     --text: #ececf1;
-    --muted: #a7acbd;
-    --border: #000000;
-    --shadow-color: #425068;
+    --muted: #a3a8b8;
+    --line: #2b303b;
+    --line-strong: #3a404d;
     --link: #ff8fa6;
+    --accent-text: #ff8fa6;
+    --shadow: none;
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.35);
     color-scheme: dark;
   }
 }
@@ -62,15 +66,15 @@ a { color: var(--link); text-underline-offset: 0.18em; }
 a:hover { text-decoration-thickness: 2px; }
 
 h1, h2 {
-  font-family: var(--font-pixel);
+  font-family: var(--font-display);
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: 0.01em;
+  line-height: 1.05;
+  letter-spacing: -0.005em;
   margin: 0 0 0.5em;
   text-wrap: balance;
 }
-h1 { font-size: clamp(2rem, 5vw, 3.1rem); }
-h2 { font-size: clamp(1.45rem, 3vw, 1.9rem); }
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
 h3 { font-size: 1.15rem; line-height: 1.3; margin: 0 0 0.35em; text-wrap: balance; }
 
 .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 1rem; }
@@ -81,39 +85,48 @@ h3 { font-size: 1.15rem; line-height: 1.3; margin: 0 0 0.35em; text-wrap: balanc
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
-:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
 
-/* Chunky pixel-style buttons */
 .btn {
   display: inline-flex; align-items: center; gap: 0.5em;
-  padding: 0.6em 1em;
-  font: 700 0.95rem/1 var(--font-body);
-  color: var(--ink);
-  background: var(--gold);
-  border: 3px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
+  padding: 0.65em 1.1em;
+  font: 600 0.95rem/1 var(--font-body);
+  color: #fff;
+  background: var(--red);
+  border: 1px solid var(--red);
+  border-radius: var(--radius-sm);
   text-decoration: none;
-  transition: transform 80ms ease, box-shadow 80ms ease;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
   cursor: pointer;
 }
-.btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--shadow-color); }
-.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--shadow-color); }
-.btn--red { background: var(--red); color: #fff; }
-.btn--plain { background: var(--surface); color: var(--text); }
+.btn:hover { background: var(--red-hover); border-color: var(--red-hover); }
+.btn--plain { background: var(--surface); color: var(--text); border-color: var(--line-strong); }
+.btn--plain:hover { background: var(--surface); border-color: var(--text); }
 .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
 .card {
   background: var(--surface);
-  border: 3px solid var(--border);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
+/* Cards that are entirely a link */
+.card-link { transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease; }
+.card-link:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); border-color: var(--line-strong); }
 
 .eyebrow {
-  font: 700 0.78rem/1 var(--font-body);
+  font: 600 0.78rem/1.2 var(--font-body);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.75rem; font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: var(--surface-2);
   color: var(--muted);
 }
 

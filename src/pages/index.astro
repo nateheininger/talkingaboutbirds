@@ -35,11 +35,11 @@ const totalHours = Math.round(show.episodes.reduce((n, e) => n + e.durationSecon
         <ul class="stats" aria-label="Show stats">
           <li><strong>{show.episodes.length}</strong> episodes</li>
           <li><strong>{totalHours}+</strong> hours</li>
-          <li>since <strong>{firstYear}</strong></li>
+          <li><strong>{firstYear}</strong> first episode</li>
         </ul>
       </div>
       <img
-        class="pixel cover"
+        class="cover"
         src={url('/cover.png')}
         width="640"
         height="640"
@@ -86,14 +86,14 @@ const totalHours = Math.round(show.episodes.reduce((n, e) => n + e.durationSecon
         <p>
           Question, comment, hot take, or opening bit? Text or leave us a voicemail and you might end up on the show.
         </p>
-        <p><a class="btn btn--red" href={`tel:${SITE.phone.digits}`}>{SITE.phone.display}</a></p>
+        <p><a class="btn" href={`tel:${SITE.phone.digits}`}>{SITE.phone.display}</a></p>
       </div>
       <div class="card cta">
         <h2>Support the show</h2>
         <p>
           Talking About Birds is listener supported. Back the show on Patreon and get into our private Discord.
         </p>
-        <p><a class="btn" href={PATREON_URL} rel="noopener">Support on Patreon</a></p>
+        <p><a class="btn btn--plain" href={PATREON_URL} rel="noopener">Support on Patreon</a></p>
       </div>
     </div>
   </section>
@@ -101,42 +101,45 @@ const totalHours = Math.round(show.episodes.reduce((n, e) => n + e.durationSecon
 
 <style>
   .hero {
-    background:
-      linear-gradient(180deg, transparent 70%, rgba(25, 26, 36, 0.12)),
-      var(--red);
+    background: var(--navy);
     color: #fff;
-    border-bottom: 4px solid var(--ink);
-    padding: 3rem 0 3.25rem;
+    padding: 3.5rem 0 3.75rem;
   }
-  .hero-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 2.5rem; align-items: center; }
-  .hero h1 { color: var(--gold); text-shadow: 4px 4px 0 var(--ink); font-size: clamp(2.4rem, 6vw, 4rem); }
-  .hero-eyebrow { color: #ffd9e1; }
-  .lede { font-size: 1.3rem; font-weight: 700; margin: 0 0 0.75rem; }
-  .hero p { max-width: 36rem; }
-  .hero :global(.listen) { margin-top: 1.5rem; }
+  .hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: center; }
+  .hero h1 { color: #fff; font-size: clamp(2.8rem, 7vw, 4.6rem); margin-bottom: 0.3em; }
+  .hero-eyebrow { color: #f1a3b3; }
+  .lede { font-size: 1.3rem; font-weight: 600; margin: 0 0 0.75rem; }
+  .hero p { max-width: 36rem; color: #d7dce6; }
+  .hero .lede { color: #fff; }
+  .hero :global(.listen) { margin-top: 1.75rem; }
+  /* Secondary listen buttons read as outlines on the navy background */
+  .hero :global(.btn--plain) { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.35); }
+  .hero :global(.btn--plain:hover) { border-color: #fff; }
   .cover {
-    width: 100%; max-width: 420px; justify-self: end;
-    border: 4px solid var(--ink); border-radius: var(--radius); box-shadow: 8px 8px 0 var(--ink);
+    width: 100%; max-width: 400px; justify-self: end;
+    border-radius: 16px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
   }
-  .stats { list-style: none; padding: 0; margin: 1.75rem 0 0; display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.95rem; color: #ffe6eb; }
-  .stats strong { font-size: 1.3rem; color: #fff; }
+  .stats { list-style: none; padding: 0; margin: 2rem 0 0; display: flex; gap: 2rem; flex-wrap: wrap; font-size: 0.95rem; color: #aab3c5; }
+  .stats strong { display: block; font: 700 1.9rem/1 var(--font-display); color: #fff; }
 
-  .latest { padding: 1.5rem; }
+  .latest { padding: 1.75rem; }
   .latest-title { font-size: 1.5rem; }
-  .latest-title a { color: var(--text); }
-  .latest audio { margin: 1rem 0; }
+  .latest-title a { color: var(--text); text-decoration: none; }
+  .latest-title a:hover { color: var(--accent-text); }
+  .latest audio { margin: 1.25rem 0 1rem; }
   .latest-links { margin: 0; }
 
-  .alt { background: var(--surface-2); border-block: 3px solid var(--border); }
+  .alt { background: var(--surface-2); }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: 1.25rem; }
 
   .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .cta { padding: 1.5rem; }
+  .cta { padding: 1.75rem; }
   .cta p:last-child { margin-bottom: 0; }
 
   @media (max-width: 760px) {
-    .hero { padding-top: 2rem; }
-    .hero-grid, .cta-grid { grid-template-columns: 1fr; }
-    .cover { justify-self: start; max-width: 150px; order: -1; box-shadow: 5px 5px 0 var(--ink); }
+    .hero { padding: 2rem 0 2.5rem; }
+    .hero-grid, .cta-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .cover { justify-self: start; max-width: 140px; order: -1; border-radius: 12px; }
+    .stats { gap: 1.5rem; }
   }
 </style>

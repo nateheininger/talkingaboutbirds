@@ -72,19 +72,20 @@ const byYear = Map.groupBy(show.episodes, (ep) => ep.pubDate.getFullYear());
 
 <style>
   .page { padding-top: 2.5rem; }
+  .search input:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px color-mix(in srgb, var(--red) 20%, transparent); }
   .search input {
     width: 100%; font: inherit; padding: 0.75rem 1rem; margin: 0.5rem 0 1.5rem;
     background: var(--surface); color: var(--text);
-    border: 3px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm);
+    border: 1px solid var(--line-strong); border-radius: var(--radius-sm);
   }
-  .year h2 { margin-top: 2rem; padding-bottom: 0.3rem; border-bottom: 3px solid var(--border); }
+  .year h2 { margin-top: 2.25rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--line-strong); }
   .list { list-style: none; margin: 0; padding: 0; }
-  .row { display: grid; grid-template-columns: 3.5rem 1fr; gap: 0.75rem; padding: 1rem 0; border-bottom: 1px solid color-mix(in srgb, var(--muted) 30%, transparent); }
+  .row { display: grid; grid-template-columns: 3.5rem 1fr; gap: 0.75rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
   .row[hidden] { display: none; }
-  .num { font: 700 1.1rem/1.4 var(--font-pixel); color: var(--red); }
+  .num { font: 700 1.25rem/1.3 var(--font-display); color: var(--accent-text); }
   .row h3 { font-size: 1.08rem; margin: 0 0 0.2rem; }
-  .row h3 a { color: var(--text); }
+  .row h3 a { color: var(--text); text-decoration: none; }
+  .row h3 a:hover { color: var(--accent-text); text-decoration: underline; }
   .summary { margin: 0 0 0.25rem; font-size: 0.95rem; color: var(--muted); line-height: 1.5; }
   .meta { margin: 0; font-size: 0.85rem; }
-  @media (prefers-color-scheme: dark) { .num { color: var(--link); } }
 </style>

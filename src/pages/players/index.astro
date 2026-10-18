@@ -20,7 +20,7 @@ const players = await getPlayers();
       {
         players.map((p) => (
           <li>
-            <a class="card player" href={url(`/players/${p.slug}/`)}>
+            <a class="card card-link player" href={url(`/players/${p.slug}/`)}>
               <span class="name">{p.name}</span>
               <span class="count">{p.mentions.length} episodes</span>
             </a>
@@ -36,9 +36,7 @@ const players = await getPlayers();
   .players { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: 0.9rem; }
   .player {
     display: flex; flex-direction: column; gap: 0.15rem; padding: 0.85rem 1rem;
-    color: var(--text); text-decoration: none; transition: transform 80ms ease, box-shadow 80ms ease;
-  }
-  .player:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--shadow-color); }
+    color: var(--text); text-decoration: none;   }
   .name { font-weight: 700; }
   .count { font-size: 0.85rem; color: var(--muted); }
 </style>

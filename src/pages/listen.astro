@@ -17,7 +17,7 @@ import { breadcrumbs } from '../lib/schema';
       {
         LISTEN.map((l) => (
           <li>
-            <a class="card app" href={l.url} rel="noopener">
+            <a class="card card-link app" href={l.url} rel="noopener">
               {l.name}
               <span aria-hidden="true">→</span>
             </a>
@@ -51,9 +51,7 @@ import { breadcrumbs } from '../lib/schema';
   .app {
     display: flex; justify-content: space-between; align-items: center;
     padding: 1rem 1.2rem; font-weight: 700; color: var(--text); text-decoration: none;
-    transition: transform 80ms ease, box-shadow 80ms ease;
-  }
-  .app:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--shadow-color); }
+      }
   .feed { display: flex; gap: 0.75rem; align-items: center; padding: 0.75rem; }
   .feed code { flex: 1; overflow-wrap: anywhere; font-size: 0.9rem; }
 </style>
