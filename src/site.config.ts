@@ -16,19 +16,7 @@ export const SITE = {
   schedule: 'New episodes every week',
 };
 
-export const HOSTS = [
-  {
-    name: 'Nate Heininger',
-    role: 'Co-host',
-    // TODO(Nate): personalize these bios.
-    bio: 'Nate co-hosts Talking About Birds and has been talking about the St. Louis Cardinals every week since the show returned in 2022.',
-  },
-  {
-    name: 'Ben Simorka',
-    role: 'Co-host',
-    bio: 'Ben co-hosts Talking About Birds and has been talking about the St. Louis Cardinals every week since the show returned in 2022.',
-  },
-];
+export const HOSTS = [{ name: 'Nate Heininger' }, { name: 'Ben Simorka' }];
 
 // Listen links, in the order they should appear.
 export const LISTEN = [

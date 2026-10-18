@@ -22,26 +22,23 @@ const latest = show.episodes[0];
     <h1>About the show</h1>
     <p class="lede">{SITE.tagline}</p>
     <p>
-      <strong>Talking About Birds</strong> is a weekly podcast mostly about the St. Louis Cardinals, hosted by
-      {HOSTS.map((h, i) => <>{i > 0 && ' and '}<strong>{h.name}</strong></>)}. Since
-      <a href={url(episodePath(first))}>episode 1</a> on {formatDate(first.pubDate)}, we've put out
-      {show.episodes.length} episodes: season previews and autopsies, player-by-player breakdowns, prospect talk, trade
-      deadline reactions, and recurring segments like Who Charted?
+      {`Talking About Birds is a weekly podcast mostly about the St. Louis Cardinals, hosted by ${HOSTS.map((h) => h.name).join(' and ')}. `}
+      Season previews and autopsies, player-by-player breakdowns, prospect talk, trade deadline reactions, and recurring
+      segments like Who Charted?
     </p>
     <p>The newest episode is <a href={url(episodePath(latest))}>{latest.title}</a>.</p>
 
-    <h2>The hosts</h2>
-    <div class="hosts">
-      {
-        HOSTS.map((h) => (
-          <section class="card host">
-            <h3>{h.name}</h3>
-            <p class="eyebrow">{h.role}</p>
-            <p>{h.bio}</p>
-          </section>
-        ))
-      }
-    </div>
+    <h2>At a glance</h2>
+    <dl class="facts">
+      <dt>Hosts</dt>
+      <dd>{HOSTS.map((h) => h.name).join(' & ')}</dd>
+      <dt>New episodes</dt>
+      <dd>Every week</dd>
+      <dt>First episode</dt>
+      <dd><a href={url(episodePath(first))}>{formatDate(first.pubDate)}</a></dd>
+      <dt>Episodes so far</dt>
+      <dd><a href={url('/episodes/')}>{show.episodes.length}</a></dd>
+    </dl>
 
     <h2>Listen</h2>
     <p>Subscribe wherever you get podcasts, or grab the RSS feed directly.</p>
@@ -66,8 +63,11 @@ const latest = show.episodes[0];
   .page { padding-top: 2.5rem; }
   .lede { font-size: 1.25rem; font-weight: 700; }
   h2 { margin-top: 2.5rem; }
-  .hosts { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-  .host { padding: 1.25rem; }
-  .host p:last-child { margin-bottom: 0; }
-  @media (max-width: 640px) { .hosts { grid-template-columns: 1fr; } }
+  .facts {
+    display: grid; grid-template-columns: max-content 1fr; gap: 0;
+    margin: 0; border-top: 1px solid var(--line);
+  }
+  .facts dt, .facts dd { margin: 0; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+  .facts dt { color: var(--muted); padding-right: 2rem; }
+  .facts dd { font-weight: 600; }
 </style>
