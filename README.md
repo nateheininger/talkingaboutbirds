@@ -55,11 +55,13 @@ Then open http://localhost:4321.
 
 ## Going live on talkingaboutbirds.com
 
-Right now the domain forwards to the omg.lol profile, so Google doesn't see any content on it. To switch:
+Right now Porkbun forwards the domain to the omg.lol profile, so Google doesn't see any content on it. To switch:
 
-1. **At Porkbun** (Domain Management → talkingaboutbirds.com):
-   - Delete the URL forwarding for `talkingaboutbirds.com` and `www`.
-   - Under DNS, delete any existing `A`, `AAAA`, `ALIAS`, or `CNAME` records for the root and `www`, then add:
+1. **Verify the domain with GitHub** (prevents anyone else from claiming it): GitHub → profile picture → **Settings** → **Pages** → **Add a domain** → `talkingaboutbirds.com`. Add the TXT record it shows at Porkbun (Host `_github-pages-challenge-nateheininger`), then click **Verify**. Leave that TXT record in place permanently.
+2. **At Porkbun** (Account → Domain Management → **Details** on talkingaboutbirds.com):
+   - **URL Forwarding** → delete the forward to `talkingaboutbirds.omg.lol`.
+   - **DNS Records** → delete every record whose answer is `uixie.porkbun.com` or `pixie.porkbun.com`, including the wildcard `*` one. Keep the TXT record from step 1, and don't touch the NS records.
+   - Add these records (leave **Host** blank for the root domain):
 
      | Type | Host | Answer |
      | --- | --- | --- |
@@ -67,14 +69,20 @@ Right now the domain forwards to the omg.lol profile, so Google doesn't see any 
      | A | *(blank)* | 185.199.109.153 |
      | A | *(blank)* | 185.199.110.153 |
      | A | *(blank)* | 185.199.111.153 |
+     | AAAA | *(blank)* | 2606:50c0:8000::153 |
+     | AAAA | *(blank)* | 2606:50c0:8001::153 |
+     | AAAA | *(blank)* | 2606:50c0:8002::153 |
+     | AAAA | *(blank)* | 2606:50c0:8003::153 |
      | CNAME | www | nateheininger.github.io |
 
-2. **In GitHub** (this repo → Settings):
+3. **In GitHub** (this repo → Settings):
    - Secrets and variables → Actions → **Variables** → New variable: `SITE_URL` = `https://talkingaboutbirds.com`
-   - Pages → Custom domain: `talkingaboutbirds.com` → Save. Tick **Enforce HTTPS** once the certificate is issued (can take up to an hour).
+   - Pages → Custom domain: `talkingaboutbirds.com` → Save. Tick **Enforce HTTPS** once the certificate is issued (usually within an hour).
    - Actions → Build and deploy → **Run workflow**.
 
 DNS changes usually take effect within an hour. Until then the site is at https://nateheininger.github.io/talkingaboutbirds/ (marked `noindex` so Google doesn't index the preview copy).
+
+**To undo:** delete the records you added in step 2 and recreate the URL forward to `https://talkingaboutbirds.omg.lol` with wildcard forwarding on.
 
 ## After launch: SEO checklist
 
