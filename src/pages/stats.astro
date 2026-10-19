@@ -206,9 +206,9 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
               </section>
 
               <section class="card block">
-                <h2>Websites sending listeners</h2>
-                <p class="muted sub">Last 12 months. Plays that started on a web page; sites that embed episodes can also preload audio, so a burst may mean page views.</p>
-                <BarList rows={d.referrers.rows} caption="Downloads by referring website" />
+                <h2>Where web plays come from</h2>
+                <p class="muted sub">Last 12 months. Plays that started in a web player (a site's embed, the Transistor player, or a Tesla's touchscreen) by where they came from. Sites that embed episodes can preload audio, so a burst may mean page views rather than listens.</p>
+                <BarList rows={d.referrers.rows} caption="Web plays by source" />
               </section>
             </div>
 
