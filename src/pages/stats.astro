@@ -4,6 +4,7 @@
 // the script at the bottom decrypts it in the browser.
 import Base from '../layouts/Base.astro';
 import ColumnChart from '../components/stats/ColumnChart.astro';
+import PaceChart from '../components/stats/PaceChart.astro';
 import BarList from '../components/stats/BarList.astro';
 import { loadDashboard, fmt, change, monthName, shortDate, type EpisodeStat } from '../lib/stats';
 import { getShow } from '../lib/feed';
@@ -61,6 +62,32 @@ if (d) {
     top,
     recentMonths,
     period: `${monthName(d.period.from, 'short')} to ${monthName(d.period.to, 'short')}`,
+    yoy: d.yearOverYear && (() => {
+      const years = d.yearOverYear.years;
+      const now = years.at(-1)!;
+      const last = years.at(-2);
+      const throughLabel = new Date(`${d.asOf}T12:00:00Z`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+      const rows = years.map((y, i) => {
+        const prev = years[i - 1];
+        return { ...y, vsPrev: prev?.sameDate && y.sameDate ? change(y.sameDate, prev.sameDate) : '' };
+      });
+      return {
+        rows,
+        throughLabel,
+        hasTransistor: years.some((y) => y.transistor != null),
+        tiles: [
+          last?.sameDate && now.sameDate
+            ? { label: `${now.year} vs. ${last.year}, Jan 1 to ${throughLabel}`, value: change(now.sameDate, last.sameDate).replace('▲ ', '+').replace('▼ ', '−'), note: `${fmt(now.sameDate)} vs. ${fmt(last.sameDate)} downloads` }
+            : null,
+          d.yearOverYear.projection && last?.downloads
+            ? { label: `${now.year} on pace for`, value: `~${fmt(d.yearOverYear.projection)}`, note: `vs. ${fmt(last.downloads)} in ${last.year}. Estimate based on how ${d.yearOverYear.projectionBasis[0]}–${d.yearOverYear.projectionBasis.at(-1)} finished` }
+            : null,
+          last?.avgFirstWeek && now.avgFirstWeek
+            ? { label: 'First-week downloads per episode', value: fmt(now.avgFirstWeek), note: `vs. ${fmt(last.avgFirstWeek)} in ${last.year} (${change(now.avgFirstWeek, last.avgFirstWeek)})` }
+            : null,
+        ].filter(Boolean) as { label: string; value: string; note: string }[],
+      };
+    })(),
     stlShare: ((d.geo.stl / d.geo.total) * 100).toFixed(0),
   };
 }
@@ -138,6 +165,52 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
                 </table></div>
               </details>
             </section>
+
+            {
+              view.yoy && d.yearOverYear && (
+                <section class="card block">
+                  <h2>Year over year</h2>
+                  <p class="muted sub">Running total of downloads through each year, so this season can be compared with past seasons at the same date.</p>
+                  <ul class="tiles yoy-tiles">
+                    {view.yoy.tiles.map((t) => (
+                      <li class="tile tile--flat">
+                        <span class="tile-label">{t.label}</span>
+                        <span class="tile-value">{t.value}</span>
+                        <span class="tile-note">{t.note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <PaceChart series={d.yearOverYear.pace} />
+                  <div class="table-scroll"><table class="data">
+                    <thead>
+                      <tr>
+                        <th>Year</th><th>Episodes</th><th>Downloads</th><th>Jan 1–{view.yoy.throughLabel}</th><th>vs. prior year</th><th>First week per episode</th>
+                        {view.yoy.hasTransistor && <th>Transistor’s count</th>}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {view.yoy.rows.map((y) => (
+                        <tr>
+                          <td><strong>{y.year}</strong>{!y.complete && ' (so far)'}</td>
+                          <td>{y.episodes}</td>
+                          <td>{y.downloads != null ? fmt(y.downloads) : <span class="muted">Not tracked*</span>}</td>
+                          <td>{y.sameDate != null ? fmt(y.sameDate) : '—'}</td>
+                          <td>{y.vsPrev}</td>
+                          <td>{y.avgFirstWeek != null ? fmt(y.avgFirstWeek) : '—'}</td>
+                          {view.yoy.hasTransistor && <td>{y.transistor != null ? fmt(y.transistor) : '—'}</td>}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table></div>
+                  <p class="muted fine">
+                    * OP3 started tracking the show on {shortDate(d.trackingStart)}, so the show’s first year isn’t in these numbers.
+                    {view.yoy.hasTransistor
+                      ? ' Transistor’s count covers it; Transistor counts a little differently and doesn’t filter bots the same way, so compare its column with itself.'
+                      : ' Adding a Transistor API key to the stats repo fills in 2022 from Transistor’s own count.'}
+                  </p>
+                </section>
+              )
+            }
 
             <section class="card block">
               <h2>How new episodes launch</h2>
@@ -354,8 +427,10 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
       tip.hidden = true;
       return;
     }
-    const [heading, value] = target.getAttribute('data-tip')!.split('|');
-    tip.replaceChildren(Object.assign(document.createElement('strong'), { textContent: value }), document.createTextNode(heading));
+    // data-tip="Heading|first line (bold)|more lines…"
+    const [heading, ...lines] = target.getAttribute('data-tip')!.split('|');
+    const line = (text: string, i: number) => Object.assign(document.createElement(i === 0 ? 'strong' : 'div'), { textContent: text });
+    tip.replaceChildren(Object.assign(document.createElement('div'), { className: 'tip-head', textContent: heading }), ...lines.map(line));
     tip.hidden = false;
     const x = Math.min(event.clientX + 14, window.innerWidth - tip.offsetWidth - 8);
     const y = event.clientY - tip.offsetHeight - 12;
@@ -385,6 +460,8 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
   .tile-heading { font-size: 1.25rem; margin: 0 0 0.6rem; }
   .tiles { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem; }
   .minor { font-size: 1rem; margin: 1.5rem 0 0.25rem; }
+  .yoy-tiles { margin: 0.5rem 0 1.5rem; }
+  .tile--flat { padding: 0.25rem 0 0; border: 0; box-shadow: none; background: none; display: flex; flex-direction: column; gap: 0.2rem; border-top: 3px solid var(--chart); }
   .tile { padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: 0.2rem; }
   .tile-label { font-size: 0.85rem; color: var(--muted); }
   .tile-value { font: 700 2.2rem/1.1 var(--font-display); }
@@ -422,6 +499,7 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
   }
   .tip :global(strong) { display: block; font-size: 1rem; }
+  .tip :global(.tip-head) { opacity: 0.8; margin-bottom: 0.15rem; }
 
   @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
 </style>

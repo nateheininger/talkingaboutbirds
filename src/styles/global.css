@@ -17,6 +17,9 @@
   --accent-text: #a8173a; /* red that passes contrast as text */
   --chart: #bf1d3e;
   --chart-hover: #8f1430;
+  --yoy-1: #5f6675; /* last year */
+  --yoy-2: #8e95a3;
+  --yoy-3: #b5bac4; /* three or more years ago */
   --shadow: 0 1px 2px rgba(25, 26, 36, 0.05);
   --shadow-hover: 0 8px 24px rgba(25, 26, 36, 0.1);
 
@@ -43,6 +46,9 @@
     --accent-text: #ff8fa6;
     --chart: #e0455f;
     --chart-hover: #f37a8e;
+    --yoy-1: #a3a9b6;
+    --yoy-2: #747b89;
+    --yoy-3: #4f5563;
     --shadow: none;
     --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.35);
     color-scheme: dark;

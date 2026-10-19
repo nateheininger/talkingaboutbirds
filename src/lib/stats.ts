@@ -43,6 +43,23 @@ export interface Dashboard {
     youtubeSubscribers: number | null;
   };
   monthly: { month: string; downloads: number; partial: boolean }[];
+  yearOverYear?: {
+    years: {
+      year: number;
+      complete: boolean;
+      episodes: number;
+      coverage: 'full' | 'partial' | 'none'; // how much of the year OP3 tracked
+      downloads: number | null;
+      sameDate: number | null; // Jan 1 through asOf's month/day
+      avgFirstWeek: number | null;
+      transistor: number | null;
+      transistorSameDate: number | null;
+    }[];
+    pace: { year: number; points: [number, number][] }[];
+    projection: number | null;
+    projectionBasis: number[];
+    shareByNow: number;
+  };
   episodes: EpisodeStat[]; // newest first
   period: { from: string; to: string };
   apps: { total: number; rows: Ranked[] };
