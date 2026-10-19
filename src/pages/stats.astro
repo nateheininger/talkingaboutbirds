@@ -14,6 +14,9 @@ const { episodes } = await getShow();
 const slugs = new Map(episodes.map((e) => [e.number, episodePath(e)]));
 const epHref = (n: number) => (slugs.has(n) ? url(slugs.get(n)!) : undefined);
 const n = (v: number | null) => (v == null ? '…' : fmt(v));
+const rating = (v: number | null) => (v == null ? '—' : `★ ${v.toFixed(1)}`);
+const num = (v: number | null | '') => (v == null || v === '' ? '—' : fmt(v));
+const rank = (v: number | null) => (v == null ? '—' : v === 0 ? 'Not in top 200' : `#${v}`);
 
 let view;
 if (d) {
@@ -28,12 +31,16 @@ if (d) {
   });
   view = {
     h,
-    tiles: [
+    downloadTiles: [
       { label: 'Downloads, last 30 days', value: fmt(h.last30), note: `${change(h.last30, h.prior30)} vs. prior 30 days` },
       { label: `${h.year} so far`, value: fmt(h.ytd), note: `${change(h.ytd, h.lastYtd)} vs. this point in ${h.year - 1}` },
-      { label: 'First-week downloads, last 4 episodes', value: fmt(h.recentLaunch), note: `${change(h.recentLaunch, h.priorLaunch)} vs. the 4 before` },
-      { label: 'Apple Podcasts', value: h.appleRating ? `★ ${h.appleRating.toFixed(1)}` : '—', note: h.appleRatings ? `${fmt(h.appleRatings)} ratings` : '' },
-      { label: 'Bluesky followers', value: h.blueskyFollowers ? fmt(h.blueskyFollowers) : '—', note: '' },
+      { label: 'First-week downloads, avg. of last 4 episodes', value: fmt(h.recentLaunch), note: `${change(h.recentLaunch, h.priorLaunch)} vs. the 4 before` },
+    ],
+    communityTiles: [
+      { label: 'Patreon paid members', value: num(h.patreonPaid), note: h.patreonMembers != null ? `${fmt(h.patreonMembers)} members including free` : '' },
+      { label: 'YouTube subscribers', value: num(h.youtubeSubscribers), note: '' },
+      { label: 'Apple Podcasts', value: rating(h.appleRating), note: h.appleRatings ? `${fmt(h.appleRatings)} ratings` : '' },
+      { label: 'Bluesky followers', value: num(h.blueskyFollowers), note: '' },
     ],
     monthColumns: d.monthly.map((m) => ({
       label: monthName(m.month) + (m.partial ? ' (so far)' : ''),
@@ -57,8 +64,6 @@ if (d) {
     stlShare: ((d.geo.stl / d.geo.total) * 100).toFixed(0),
   };
 }
-const rating = (v: number | null) => (v == null ? '—' : `★ ${v.toFixed(1)}`);
-const num = (v: number | null) => (v == null ? '—' : fmt(v));
 const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
 ---
 
@@ -97,17 +102,25 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
               Excludes suspected bot downloads ({fmt(view.h.bots30)} in the last 30 days).
             </p>
 
-            <ul class="tiles">
-              {
-                view.tiles.map((t) => (
-                  <li class="card tile">
-                    <span class="tile-label">{t.label}</span>
-                    <span class="tile-value">{t.value}</span>
-                    <span class="tile-note">{t.note}</span>
-                  </li>
-                ))
-              }
-            </ul>
+            {
+              [
+                { heading: 'Downloads', tiles: view.downloadTiles },
+                { heading: 'Community', tiles: view.communityTiles },
+              ].map((group) => (
+                <section class="tile-group">
+                  <h2 class="tile-heading">{group.heading}</h2>
+                  <ul class="tiles">
+                    {group.tiles.map((t) => (
+                      <li class="card tile">
+                        <span class="tile-label">{t.label}</span>
+                        <span class="tile-value">{t.value}</span>
+                        <span class="tile-note">{t.note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))
+            }
 
             <section class="card block">
               <h2>Downloads per month</h2>
@@ -133,7 +146,7 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
               <div class="table-scroll">
                 <table class="data">
                   <thead>
-                    <tr><th>Episode</th><th>Released</th><th>Day 1</th><th>3 days</th><th>7 days</th><th>30 days</th><th>Total</th></tr>
+                    <tr><th>Episode</th><th>Released</th><th>24 hours</th><th>3 days</th><th>7 days</th><th>30 days</th><th>Total</th></tr>
                   </thead>
                   <tbody>
                     {view.recent.map((e) => (
@@ -147,7 +160,7 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
                   </tbody>
                 </table>
               </div>
-              <p class="muted fine">“…” means that window hasn’t finished yet. Days count from release day (UTC).</p>
+              <p class="muted fine">Counted from the moment each episode was released, the same way OP3 and the podcast apps measure launches. “…” means that window hasn’t finished yet.</p>
             </section>
 
             <div class="two">
@@ -171,6 +184,12 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
                 <h2>Where people listen</h2>
                 <p class="muted sub">{view.period}.</p>
                 <BarList rows={d.apps.rows} total={d.apps.total} caption="Downloads by app" />
+                {d.devices && (
+                  <>
+                    <h3 class="minor">Devices</h3>
+                    <BarList rows={d.devices.rows} total={d.devices.total} caption="Downloads by device type" />
+                  </>
+                )}
               </section>
             </div>
 
@@ -193,13 +212,40 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
               </section>
             </div>
 
+            {
+              d.youtube?.videos.length > 0 && (
+                <section class="card block">
+                  <h2>YouTube</h2>
+                  <p class="muted sub">
+                    Views on the {d.youtube.videos.length} most recent uploads.
+                    {d.youtube.source === 'page' && ' Counts come from the public channel page, which rounds big numbers.'}
+                  </p>
+                  <div class="table-scroll"><table class="data">
+                    <thead>
+                      <tr><th>Video</th><th>Posted</th><th>Views</th>{d.youtube.source === 'api' && <><th>Likes</th><th>Comments</th></>}</tr>
+                    </thead>
+                    <tbody>
+                      {d.youtube.videos.map((v) => (
+                        <tr>
+                          <td class="ep"><a href={`https://www.youtube.com/watch?v=${v.id}`} rel="noopener">{v.title}</a></td>
+                          <td>{/^\d{4}-/.test(v.published) ? shortDate(v.published.slice(0, 10)) : v.published}</td>
+                          <td><strong>{num(v.views)}</strong></td>
+                          {d.youtube.source === 'api' && <><td>{num(v.likes ?? null)}</td><td>{num(v.comments ?? null)}</td></>}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table></div>
+                </section>
+              )
+            }
+
             <section class="card block">
               <h2>Ratings and followers</h2>
               <div class="table-scroll"><table class="data">
                 <thead><tr><th /><th>Now</th><th>30 days ago</th><th>90 days ago</th></tr></thead>
                 <tbody>
                   {d.social.map((s) => {
-                    const f = s.format === 'rating' ? rating : num;
+                    const f = s.format === 'rating' ? rating : s.format === 'rank' ? rank : num;
                     return <tr><td>{s.label}</td><td><strong>{f(s.now)}</strong></td><td>{f(s.ago30)}</td><td>{f(s.ago90)}</td></tr>;
                   })}
                 </tbody>
@@ -335,7 +381,10 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
   .error { color: var(--accent-text); margin: 0.75rem 0 0; font-weight: 600; }
 
   .asof { margin: 0.25rem 0 1.5rem; font-size: 0.95rem; }
-  .tiles { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1rem; }
+  .tile-group { margin-bottom: 1.5rem; }
+  .tile-heading { font-size: 1.25rem; margin: 0 0 0.6rem; }
+  .tiles { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 1rem; }
+  .minor { font-size: 1rem; margin: 1.5rem 0 0.25rem; }
   .tile { padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: 0.2rem; }
   .tile-label { font-size: 0.85rem; color: var(--muted); }
   .tile-value { font: 700 2.2rem/1.1 var(--font-display); }

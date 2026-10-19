@@ -14,7 +14,7 @@ export interface EpisodeStat {
   number: number;
   title: string;
   release: string; // YYYY-MM-DD
-  d1: number | null; // null = window not finished yet
+  d1: number | null; // first 24 hours after release; null = window not finished yet
   d3: number | null;
   d7: number | null;
   d30: number | null;
@@ -38,14 +38,22 @@ export interface Dashboard {
     appleRating: number | null;
     appleRatings: number | null;
     blueskyFollowers: number | null;
+    patreonPaid: number | null;
+    patreonMembers: number | null;
+    youtubeSubscribers: number | null;
   };
   monthly: { month: string; downloads: number; partial: boolean }[];
   episodes: EpisodeStat[]; // newest first
   period: { from: string; to: string };
   apps: { total: number; rows: Ranked[] };
+  devices: { total: number; rows: Ranked[] };
+  youtube: {
+    source: 'page' | 'api' | null; // 'page' = public channel page (rounded counts), 'api' = YouTube Data API
+    videos: { id: string; title: string; published: string; views: number | ''; likes?: number; comments?: number }[];
+  };
   referrers: { from: string; rows: Ranked[] };
   geo: { total: number; usTotal: number; stl: number; metros: Ranked[]; states: Ranked[]; countries: Ranked[] };
-  social: { label: string; format: 'rating' | 'number'; now: number; ago30: number | null; ago90: number | null }[];
+  social: { label: string; format: 'rating' | 'rank' | 'number'; now: number; ago30: number | null; ago90: number | null }[];
   notes: string[];
 }
 

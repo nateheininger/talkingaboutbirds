@@ -35,7 +35,7 @@ const year = new Date().getFullYear();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {!noindex && <link rel="canonical" href={canonical} />}
     <meta name="robots" content={robots} />
     <meta name="theme-color" content="#bf1d3e" />
     <meta name="generator" content={Astro.generator} />
