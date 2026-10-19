@@ -15,6 +15,8 @@
   --line-strong: #cfcbc3;
   --link: #a8173a;
   --accent-text: #a8173a; /* red that passes contrast as text */
+  --chart: #bf1d3e;
+  --chart-hover: #8f1430;
   --shadow: 0 1px 2px rgba(25, 26, 36, 0.05);
   --shadow-hover: 0 8px 24px rgba(25, 26, 36, 0.1);
 
@@ -39,6 +41,8 @@
     --line-strong: #3a404d;
     --link: #ff8fa6;
     --accent-text: #ff8fa6;
+    --chart: #e0455f;
+    --chart-hover: #f37a8e;
     --shadow: none;
     --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.35);
     color-scheme: dark;
@@ -50,6 +54,9 @@
 *::after { box-sizing: border-box; }
 
 html { -webkit-text-size-adjust: 100%; }
+
+/* `hidden` should always win over component display styles like .btn's inline-flex. */
+[hidden] { display: none !important; }
 
 body {
   margin: 0;

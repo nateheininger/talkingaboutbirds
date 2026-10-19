@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import encryptStats from './integrations/encrypt-stats.mjs';
 
 // SITE_URL / BASE_PATH are set by the GitHub Actions workflow. Until the custom
 // domain is pointed at GitHub Pages, the site is served from
@@ -14,8 +15,9 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
-      // Short links like /241/ just redirect to the full episode page; keep them out of the sitemap.
-      filter: (page) => !/\/\d+\/$/.test(new URL(page).pathname),
+      // Short links like /241/ just redirect to the full episode page, and /stats/ is private.
+      filter: (page) => !/\/(\d+|stats)\/$/.test(new URL(page).pathname),
     }),
+    encryptStats(),
   ],
 });

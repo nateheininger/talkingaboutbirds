@@ -1,0 +1,44 @@
+---
+// Ranked list with inline bars: name, bar, count, and share. The numbers are always shown,
+// so the bar is decoration on top of a readable table.
+import { fmt, type Ranked } from '../../lib/stats';
+
+interface Props {
+  rows: Ranked[];
+  total?: number; // show a share column against this
+  caption: string;
+}
+const { rows, total, caption } = Astro.props;
+const max = Math.max(...rows.map((r) => r.downloads), 1);
+---
+
+<table class="barlist">
+  <caption class="visually-hidden">{caption}</caption>
+  <thead class="visually-hidden">
+    <tr><th>Name</th><th>Downloads</th>{total && <th>Share</th>}</tr>
+  </thead>
+  <tbody>
+    {
+      rows.map((r) => (
+        <tr>
+          <th scope="row">
+            <span class="name">{r.name}</span>
+            <span class="track" aria-hidden="true"><span class="fill" style={`width:${(r.downloads / max) * 100}%`} /></span>
+          </th>
+          <td>{fmt(r.downloads)}</td>
+          {total && <td class="muted">{((r.downloads / total) * 100).toFixed(1)}%</td>}
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+
+<style>
+  .barlist { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  .barlist th, .barlist td { padding: 0.45rem 0; border-bottom: 1px solid var(--line); vertical-align: bottom; }
+  .barlist th { text-align: left; font-weight: 500; width: 100%; padding-right: 1rem; }
+  .barlist td { text-align: right; white-space: nowrap; padding-left: 1rem; }
+  .name { display: block; margin-bottom: 0.3rem; }
+  .track { display: block; height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+  .fill { display: block; height: 100%; border-radius: 3px; background: var(--chart); }
+</style>

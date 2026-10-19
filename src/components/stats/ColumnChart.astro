@@ -1,0 +1,111 @@
+---
+// Single-series column chart as inline SVG. Hovering a column shows its tooltip (data-tip),
+// handled by the script on the stats page. Every chart has a table alongside it.
+import { fmt } from '../../lib/stats';
+
+interface Column {
+  label: string; // tooltip title
+  value: number;
+  muted?: boolean; // e.g. the month in progress
+  annotate?: string; // direct label above the column
+}
+
+interface Props {
+  title: string;
+  columns: Column[];
+  xTick?: (index: number) => string | null;
+  average?: number;
+}
+
+const { title, columns, xTick = () => null, average } = Astro.props;
+
+const W = 760;
+const H = 260;
+const m = { top: 26, right: average != null ? 78 : 12, bottom: 28, left: 46 };
+const w = W - m.left - m.right;
+const h = H - m.top - m.bottom;
+const max = Math.max(...columns.map((c) => c.value), average ?? 0, 1);
+const rawStep = max / 4;
+const pow = 10 ** Math.floor(Math.log10(rawStep));
+const step = [1, 2, 2.5, 5, 10].map((s) => s * pow).find((s) => s >= rawStep)!;
+const top = Math.ceil(max / step) * step;
+const y = (v: number) => m.top + h - (v / top) * h;
+const slot = w / columns.length;
+const barW = Math.min(24, Math.max(3, slot - Math.max(2, slot * 0.28)));
+const ticks = Array.from({ length: Math.round(top / step) + 1 }, (_, i) => i * step);
+const x = (i: number) => m.left + i * slot + (slot - barW) / 2;
+
+// Rounded 4px data end, square at the baseline.
+const bar = (x0: number, value: number) => {
+  const bh = Math.max(0, y(0) - y(value));
+  const r = Math.min(4, barW / 2, bh);
+  return `M${x0},${y(0)}v${-(bh - r)}q0,${-r} ${r},${-r}h${barW - 2 * r}q${r},0 ${r},${r}v${bh - r}z`;
+};
+
+// Direct labels sit above the tallest column they span so they never collide.
+const labelY = (i: number, text: string) => {
+  const textW = text.length * 6.6;
+  const anchor = i > columns.length * 0.8 ? 'end' : i < columns.length * 0.2 ? 'start' : 'middle';
+  const ax = anchor === 'end' ? x(i) + barW : anchor === 'start' ? x(i) : x(i) + barW / 2;
+  const [x0, x1] = anchor === 'end' ? [ax - textW, ax] : anchor === 'start' ? [ax, ax + textW] : [ax - textW / 2, ax + textW / 2];
+  let ly = Math.min(...columns.filter((_, j) => x(j) + barW >= x0 && x(j) <= x1).map((c) => y(c.value))) - 7;
+  if (average != null && ly > y(average) - 4 && ly - 12 < y(average) + 4) ly = y(average) - 6;
+  return { ax, ly, anchor };
+};
+---
+
+<div class="chart-scroll">
+  <svg class="chart" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${title}. The table below has the same numbers.`}>
+    {
+      ticks.map((t) => (
+        <g>
+          <line class="grid" x1={m.left} x2={W - m.right} y1={y(t)} y2={y(t)} />
+          <text class="axis" x={m.left - 8} y={y(t) + 4} text-anchor="end">{fmt(t)}</text>
+        </g>
+      ))
+    }
+    {
+      columns.map((c, i) => (
+        <g class="col" data-tip={`${c.label}|${fmt(c.value)} downloads`}>
+          <rect class="hit" x={m.left + i * slot} y={m.top} width={slot} height={h} />
+          <path class:list={['bar', { muted: c.muted }]} d={bar(x(i), c.value)} />
+        </g>
+      ))
+    }
+    {
+      columns.map((_, i) => {
+        const t = xTick(i);
+        return t ? <text class="axis" x={x(i) + barW / 2} y={H - 8} text-anchor="middle">{t}</text> : null;
+      })
+    }
+    {
+      columns.map((c, i) => {
+        if (!c.annotate) return null;
+        const { ax, ly, anchor } = labelY(i, c.annotate);
+        return <text class="label" x={ax} y={ly} text-anchor={anchor}>{c.annotate}</text>;
+      })
+    }
+    {
+      average != null && (
+        <g>
+          <line class="avg" x1={m.left} x2={W - m.right} y1={y(average)} y2={y(average)} />
+          <text class="axis" x={W - m.right + 8} y={y(average) - 3}>Average</text>
+          <text class="label" x={W - m.right + 8} y={y(average) + 13}>{fmt(average)}</text>
+        </g>
+      )
+    }
+  </svg>
+</div>
+
+<style>
+  .chart-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .chart { display: block; width: 100%; min-width: 560px; height: auto; font-family: var(--font-body); }
+  .grid { stroke: var(--line); stroke-width: 1; }
+  .avg { stroke: var(--muted); stroke-width: 1.5; }
+  .axis { fill: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+  .label { fill: var(--text); font-size: 12px; font-weight: 600; }
+  .bar { fill: var(--chart); transition: opacity 100ms ease; }
+  .bar.muted { opacity: 0.35; }
+  .hit { fill: transparent; }
+  .col:hover .bar { fill: var(--chart-hover); }
+</style>

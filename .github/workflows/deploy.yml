@@ -4,8 +4,10 @@ on:
   push:
     branches: [main]
   # Check the podcast feed every 2 hours; rebuild only when it changed.
+  # Also rebuild every morning after the private stats repo updates (12:00 UTC) so /stats/ is fresh.
   schedule:
     - cron: '23 */2 * * *'
+    - cron: '40 12 * * *'
   # "Run workflow" button in the Actions tab forces a rebuild.
   workflow_dispatch:
 
@@ -37,7 +39,7 @@ jobs:
 
       - name: Decide whether to deploy
         id: decide
-        run: echo "deploy=${{ github.event_name != 'schedule' || steps.feed.outputs.changed == 'true' }}" >> "$GITHUB_OUTPUT"
+        run: echo "deploy=${{ github.event_name != 'schedule' || github.event.schedule == '40 12 * * *' || steps.feed.outputs.changed == 'true' }}" >> "$GITHUB_OUTPUT"
 
       - name: Record the new feed state
         if: steps.feed.outputs.changed == 'true'
@@ -47,6 +49,20 @@ jobs:
           git add src/data/feed-state.json
           git commit -m "Feed update: $(node -p "require('./src/data/feed-state.json').latestTitle")"
           git pull --rebase && git push
+
+      # The stats dashboard data lives in the private tab-metrics repo. A read-only deploy key
+      # fetches just data/dashboard.json; the /stats/ page is encrypted before publishing.
+      # If this fails the site still deploys, with a placeholder on /stats/.
+      - name: Get stats data
+        if: steps.decide.outputs.deploy == 'true'
+        continue-on-error: true
+        uses: actions/checkout@v7
+        with:
+          repository: nateheininger/tab-metrics
+          ssh-key: ${{ secrets.METRICS_DEPLOY_KEY }}
+          path: .metrics
+          sparse-checkout: data/dashboard.json
+          sparse-checkout-cone-mode: false
 
       - run: npm ci
         if: steps.decide.outputs.deploy == 'true'
@@ -58,6 +74,8 @@ jobs:
           # Until then the site builds for https://<owner>.github.io/<repo>/.
           SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io', github.repository_owner) }}
           BASE_PATH: ${{ vars.SITE_URL && '/' || format('/{0}', github.event.repository.name) }}
+          METRICS_DIR: .metrics
+          STATS_PASSWORD: ${{ secrets.STATS_PASSWORD }}
         run: npm run build
 
       - uses: actions/upload-pages-artifact@v5

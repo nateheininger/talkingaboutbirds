@@ -1,0 +1,378 @@
+---
+// Private stats dashboard. Everything between the data-stats-start/end markers is
+// encrypted with STATS_PASSWORD after the build (integrations/encrypt-stats.mjs), and
+// the script at the bottom decrypts it in the browser.
+import Base from '../layouts/Base.astro';
+import ColumnChart from '../components/stats/ColumnChart.astro';
+import BarList from '../components/stats/BarList.astro';
+import { loadDashboard, fmt, change, monthName, shortDate, type EpisodeStat } from '../lib/stats';
+import { getShow } from '../lib/feed';
+import { url, episodePath } from '../lib/urls';
+
+const d = loadDashboard();
+const { episodes } = await getShow();
+const slugs = new Map(episodes.map((e) => [e.number, episodePath(e)]));
+const epHref = (n: number) => (slugs.has(n) ? url(slugs.get(n)!) : undefined);
+const n = (v: number | null) => (v == null ? '…' : fmt(v));
+
+let view;
+if (d) {
+  const h = d.headline;
+  const best = d.monthly.reduce((a, b) => (b.downloads > a.downloads ? b : a));
+  const launches = d.episodes.filter((e) => e.d7 != null).slice(0, 30).reverse();
+  const topLaunch = launches.reduce((a, b) => (b.d7! > a.d7! ? b : a), launches[0]);
+  const top = [...d.episodes].sort((a, b) => b.total - a.total).slice(0, 10);
+  const recentMonths = [...d.monthly].reverse().slice(0, 13).map((m) => {
+    const ly = d.monthly.find((x) => x.month === `${Number(m.month.slice(0, 4)) - 1}${m.month.slice(4)}`);
+    return { ...m, vsLastYear: m.partial || !ly ? '' : change(m.downloads, ly.downloads) };
+  });
+  view = {
+    h,
+    tiles: [
+      { label: 'Downloads, last 30 days', value: fmt(h.last30), note: `${change(h.last30, h.prior30)} vs. prior 30 days` },
+      { label: `${h.year} so far`, value: fmt(h.ytd), note: `${change(h.ytd, h.lastYtd)} vs. this point in ${h.year - 1}` },
+      { label: 'First-week downloads, last 4 episodes', value: fmt(h.recentLaunch), note: `${change(h.recentLaunch, h.priorLaunch)} vs. the 4 before` },
+      { label: 'Apple Podcasts', value: h.appleRating ? `★ ${h.appleRating.toFixed(1)}` : '—', note: h.appleRatings ? `${fmt(h.appleRatings)} ratings` : '' },
+      { label: 'Bluesky followers', value: h.blueskyFollowers ? fmt(h.blueskyFollowers) : '—', note: '' },
+    ],
+    monthColumns: d.monthly.map((m) => ({
+      label: monthName(m.month) + (m.partial ? ' (so far)' : ''),
+      value: m.downloads,
+      muted: m.partial,
+      annotate: m === best ? `Best: ${fmt(m.downloads)}` : undefined,
+    })),
+    monthTick: (i: number) => (d.monthly[i].month.endsWith('-01') ? d.monthly[i].month.slice(0, 4) : null),
+    launches,
+    launchColumns: launches.map((e) => ({
+      label: `#${e.number} ${e.title}`,
+      value: e.d7!,
+      annotate: e === topLaunch || e === launches.at(-1) ? `#${e.number}: ${fmt(e.d7!)}` : undefined,
+    })),
+    launchTick: (i: number) => (i % 5 === 0 || i === launches.length - 1 ? `#${launches[i].number}` : null),
+    launchAvg: Math.round(launches.reduce((t, e) => t + e.d7!, 0) / launches.length),
+    recent: d.episodes.slice(0, 12),
+    top,
+    recentMonths,
+    period: `${monthName(d.period.from, 'short')} to ${monthName(d.period.to, 'short')}`,
+    stlShare: ((d.geo.stl / d.geo.total) * 100).toFixed(0),
+  };
+}
+const rating = (v: number | null) => (v == null ? '—' : `★ ${v.toFixed(1)}`);
+const num = (v: number | null) => (v == null ? '—' : fmt(v));
+const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
+---
+
+<Base title="Stats | Talking About Birds" description="Private listener stats for Talking About Birds." path="/stats/" noindex>
+  <div class="wrap page">
+    <div class="head">
+      <div>
+        <p class="eyebrow">Private</p>
+        <h1>Show stats</h1>
+      </div>
+      <button class="btn btn--plain" type="button" id="stats-lock-btn" hidden>Lock</button>
+    </div>
+
+    {
+      !d || !view ? (
+        <p class="muted">Stats aren't available in this build.</p>
+      ) : (
+        <>
+          <form class="card unlock" id="stats-unlock" hidden>
+            <label for="stats-password">Password</label>
+            <div class="unlock-row">
+              <input id="stats-password" type="password" autocomplete="current-password" required />
+              <button class="btn" type="submit">Unlock</button>
+            </div>
+            <label class="remember">
+              <input type="checkbox" id="stats-remember" checked /> Remember on this device
+            </label>
+            <p class="error" id="stats-error" role="alert" hidden />
+          </form>
+          <noscript><p class="muted">Turn on JavaScript to view the stats.</p></noscript>
+
+          <div id="stats-content">
+            <span hidden data-stats-start />
+            <p class="muted asof">
+              Downloads through <strong>{shortDate(d.asOf)}</strong> from OP3, updated every morning. Tracking began {shortDate(d.trackingStart)}.
+              Excludes suspected bot downloads ({fmt(view.h.bots30)} in the last 30 days).
+            </p>
+
+            <ul class="tiles">
+              {
+                view.tiles.map((t) => (
+                  <li class="card tile">
+                    <span class="tile-label">{t.label}</span>
+                    <span class="tile-value">{t.value}</span>
+                    <span class="tile-note">{t.note}</span>
+                  </li>
+                ))
+              }
+            </ul>
+
+            <section class="card block">
+              <h2>Downloads per month</h2>
+              <p class="muted sub">The lighter bar is this month so far.</p>
+              <ColumnChart title="Downloads per month" columns={view.monthColumns} xTick={view.monthTick} />
+              <details>
+                <summary>Table: last 13 months</summary>
+                <div class="table-scroll"><table class="data">
+                  <thead><tr><th>Month</th><th>Downloads</th><th>vs. last year</th></tr></thead>
+                  <tbody>
+                    {view.recentMonths.map((m) => (
+                      <tr><td>{monthName(m.month)}{m.partial && ' (so far)'}</td><td>{fmt(m.downloads)}</td><td>{m.vsLastYear}</td></tr>
+                    ))}
+                  </tbody>
+                </table></div>
+              </details>
+            </section>
+
+            <section class="card block">
+              <h2>How new episodes launch</h2>
+              <p class="muted sub">First-week downloads, last {view.launches.length} episodes.</p>
+              <ColumnChart title="First-week downloads per episode" columns={view.launchColumns} xTick={view.launchTick} average={view.launchAvg} />
+              <div class="table-scroll">
+                <table class="data">
+                  <thead>
+                    <tr><th>Episode</th><th>Released</th><th>Day 1</th><th>3 days</th><th>7 days</th><th>30 days</th><th>Total</th></tr>
+                  </thead>
+                  <tbody>
+                    {view.recent.map((e) => (
+                      <tr>
+                        <td class="ep">{epHref(e.number) ? <a href={epHref(e.number)}>{title(e)}</a> : title(e)}</td>
+                        <td>{shortDate(e.release)}</td>
+                        <td>{n(e.d1)}</td><td>{n(e.d3)}</td><td>{n(e.d7)}</td><td>{n(e.d30)}</td>
+                        <td><strong>{fmt(e.total)}</strong></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p class="muted fine">“…” means that window hasn’t finished yet. Days count from release day (UTC).</p>
+            </section>
+
+            <div class="two">
+              <section class="card block">
+                <h2>Most downloaded episodes</h2>
+                <p class="muted sub">Since tracking began.</p>
+                <div class="table-scroll"><table class="data">
+                  <thead><tr><th>Episode</th><th>Total</th></tr></thead>
+                  <tbody>
+                    {view.top.map((e) => (
+                      <tr>
+                        <td class="ep">{epHref(e.number) ? <a href={epHref(e.number)}>{title(e)}</a> : title(e)}</td>
+                        <td><strong>{fmt(e.total)}</strong></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table></div>
+              </section>
+
+              <section class="card block">
+                <h2>Where people listen</h2>
+                <p class="muted sub">{view.period}.</p>
+                <BarList rows={d.apps.rows} total={d.apps.total} caption="Downloads by app" />
+              </section>
+            </div>
+
+            <div class="two">
+              <section class="card block">
+                <h2>Where listeners are</h2>
+                <p class="muted sub">{view.period}. <strong>{view.stlShare}%</strong> of downloads come from the St. Louis area.</p>
+                <BarList rows={d.geo.metros} total={d.geo.total} caption="Downloads by metro area" />
+                <details>
+                  <summary>US states and countries</summary>
+                  <BarList rows={d.geo.states} total={d.geo.usTotal} caption="Downloads by US state" />
+                  <BarList rows={d.geo.countries} total={d.geo.total} caption="Downloads by country" />
+                </details>
+              </section>
+
+              <section class="card block">
+                <h2>Websites sending listeners</h2>
+                <p class="muted sub">Last 12 months. Plays that started on a web page; sites that embed episodes can also preload audio, so a burst may mean page views.</p>
+                <BarList rows={d.referrers.rows} caption="Downloads by referring website" />
+              </section>
+            </div>
+
+            <section class="card block">
+              <h2>Ratings and followers</h2>
+              <div class="table-scroll"><table class="data">
+                <thead><tr><th /><th>Now</th><th>30 days ago</th><th>90 days ago</th></tr></thead>
+                <tbody>
+                  {d.social.map((s) => {
+                    const f = s.format === 'rating' ? rating : num;
+                    return <tr><td>{s.label}</td><td><strong>{f(s.now)}</strong></td><td>{f(s.ago30)}</td><td>{f(s.ago90)}</td></tr>;
+                  })}
+                </tbody>
+              </table></div>
+              <p class="muted fine">These are snapshotted daily, so the older columns fill in over time.</p>
+            </section>
+
+            {
+              d.notes.length > 0 && (
+                <section class="notes">
+                  <h2>Data sources</h2>
+                  <ul>{d.notes.map((note) => <li>{note.replace(/^\S+\s/, '')}</li>)}</ul>
+                </section>
+              )
+            }
+            <span hidden data-stats-end />
+          </div>
+        </>
+      )
+    }
+  </div>
+  <div class="tip" id="stats-tip" role="tooltip" hidden></div>
+</Base>
+
+<script>
+  const KEY = 'tab-stats-password';
+  const payloadEl = document.getElementById('stats-payload');
+  const content = document.getElementById('stats-content');
+  const form = document.getElementById('stats-unlock') as HTMLFormElement | null;
+  const input = document.getElementById('stats-password') as HTMLInputElement | null;
+  const remember = document.getElementById('stats-remember') as HTMLInputElement | null;
+  const error = document.getElementById('stats-error');
+  const lockBtn = document.getElementById('stats-lock-btn');
+
+  const store = {
+    get: () => { try { return localStorage.getItem(KEY); } catch { return null; } },
+    set: (v: string) => { try { localStorage.setItem(KEY, v); } catch {} },
+    clear: () => { try { localStorage.removeItem(KEY); } catch {} },
+  };
+  const bytes = (b64: string) => Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+
+  async function decrypt(password: string): Promise<string> {
+    const p = JSON.parse(payloadEl!.textContent!);
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']);
+    const key = await crypto.subtle.deriveKey(
+      { name: 'PBKDF2', salt: bytes(p.salt), iterations: p.iterations, hash: 'SHA-256' },
+      base,
+      { name: 'AES-GCM', length: 256 },
+      false,
+      ['decrypt'],
+    );
+    const zipped = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes(p.iv) }, key, bytes(p.data));
+    const stream = new Blob([zipped]).stream().pipeThrough(new DecompressionStream('gzip'));
+    return new Response(stream).text();
+  }
+
+  // On narrow screens charts scroll sideways; start them on the most recent data.
+  const scrollChartsToEnd = () => document.querySelectorAll('.chart-scroll').forEach((el) => (el.scrollLeft = el.scrollWidth));
+
+  async function unlock(password: string) {
+    content!.innerHTML = await decrypt(password); // throws on a wrong password
+    form!.hidden = true;
+    lockBtn!.hidden = false;
+    scrollChartsToEnd();
+  }
+
+  if (!payloadEl) scrollChartsToEnd();
+
+  if (payloadEl && form) {
+    const saved = store.get();
+    (saved ? unlock(saved) : Promise.reject())
+      .catch(() => {
+        store.clear();
+        form.hidden = false;
+        input!.focus();
+      });
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      error!.hidden = true;
+      const button = form.querySelector('button')!;
+      button.disabled = true;
+      try {
+        await unlock(input!.value);
+        if (remember!.checked) store.set(input!.value);
+      } catch {
+        error!.textContent = 'That password didn’t work.';
+        error!.hidden = false;
+        input!.select();
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    lockBtn!.addEventListener('click', () => {
+      store.clear();
+      location.reload();
+    });
+  }
+
+  // Chart tooltips: any element with data-tip="Title|Value".
+  const tip = document.getElementById('stats-tip')!;
+  const showTip = (event: PointerEvent) => {
+    const target = (event.target as Element).closest?.('[data-tip]');
+    if (!target) {
+      tip.hidden = true;
+      return;
+    }
+    const [heading, value] = target.getAttribute('data-tip')!.split('|');
+    tip.replaceChildren(Object.assign(document.createElement('strong'), { textContent: value }), document.createTextNode(heading));
+    tip.hidden = false;
+    const x = Math.min(event.clientX + 14, window.innerWidth - tip.offsetWidth - 8);
+    const y = event.clientY - tip.offsetHeight - 12;
+    tip.style.transform = `translate(${x}px, ${y < 8 ? event.clientY + 16 : y}px)`;
+  };
+  document.addEventListener('pointermove', showTip);
+  document.addEventListener('pointerdown', showTip); // taps on phones
+</script>
+
+<style>
+  .page { padding-top: 2rem; }
+  .head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; }
+  .head h1 { margin-bottom: 0.25em; }
+  .unlock { max-width: 26rem; padding: 1.5rem; margin-top: 1rem; }
+  .unlock label { font-weight: 600; display: block; margin-bottom: 0.5rem; }
+  .unlock-row { display: flex; gap: 0.6rem; }
+  .unlock input[type='password'] {
+    flex: 1; font: inherit; padding: 0.6rem 0.8rem; min-width: 0;
+    border: 1px solid var(--line-strong); border-radius: var(--radius-sm); background: var(--surface); color: var(--text);
+  }
+  .unlock input[type='password']:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px color-mix(in srgb, var(--red) 20%, transparent); }
+  .remember { display: flex !important; align-items: center; gap: 0.5rem; font-weight: 400 !important; margin: 0.9rem 0 0 !important; font-size: 0.92rem; color: var(--muted); }
+  .error { color: var(--accent-text); margin: 0.75rem 0 0; font-weight: 600; }
+
+  .asof { margin: 0.25rem 0 1.5rem; font-size: 0.95rem; }
+  .tiles { list-style: none; padding: 0; margin: 0 0 1.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)); gap: 1rem; }
+  .tile { padding: 1rem 1.1rem; display: flex; flex-direction: column; gap: 0.2rem; }
+  .tile-label { font-size: 0.85rem; color: var(--muted); }
+  .tile-value { font: 700 2.2rem/1.1 var(--font-display); }
+  .tile-note { font-size: 0.85rem; color: var(--muted); }
+
+  .block { padding: 1.25rem 1.4rem 1.4rem; margin-bottom: 1.5rem; min-width: 0; }
+  .block h2 { font-size: 1.6rem; margin-bottom: 0.15em; }
+  .sub { margin: 0 0 1rem; font-size: 0.92rem; }
+  .fine { font-size: 0.85rem; margin: 0.75rem 0 0; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .two .block { margin-bottom: 1.5rem; }
+
+  details { margin-top: 1rem; }
+  summary { cursor: pointer; font-weight: 600; font-size: 0.92rem; color: var(--accent-text); }
+  details[open] summary { margin-bottom: 0.75rem; }
+
+  .table-scroll { overflow-x: auto; }
+  .block > .table-scroll { margin-top: 1rem; }
+  .data { width: 100%; border-collapse: collapse; font-size: 0.92rem; font-variant-numeric: tabular-nums; }
+  .data th { text-align: right; font-weight: 600; color: var(--muted); font-size: 0.8rem; padding: 0.4rem 0 0.4rem 1rem; border-bottom: 1px solid var(--line-strong); white-space: nowrap; }
+  .data td { text-align: right; padding: 0.5rem 0 0.5rem 1rem; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  .data th:first-child, .data td:first-child { text-align: left; padding-left: 0; white-space: normal; }
+  @media (max-width: 520px) { .data th { white-space: normal; } }
+  .data td.ep { white-space: normal; min-width: 14rem; }
+  .data a { color: var(--text); text-decoration: none; }
+  .data a:hover { color: var(--accent-text); text-decoration: underline; }
+
+  .notes { margin-top: 1rem; font-size: 0.92rem; color: var(--muted); }
+  .notes h2 { font-size: 1.3rem; color: var(--text); }
+
+  .tip {
+    position: fixed; left: 0; top: 0; z-index: 20; pointer-events: none;
+    max-width: 16rem; padding: 0.5rem 0.7rem; border-radius: var(--radius-sm);
+    background: var(--navy); color: #fff; font-size: 0.85rem; line-height: 1.35;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+  .tip :global(strong) { display: block; font-size: 1rem; }
+
+  @media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+</style>
