@@ -19,6 +19,12 @@ export interface EpisodeStat {
   d7: number | null;
   d30: number | null;
   total: number;
+  // Listeners: each connection counted once per episode, so one phone that both downloads
+  // and streams counts once. Missing in data from before Nov 2026; null = window not finished.
+  l1?: number | null;
+  l3?: number | null;
+  l7?: number | null;
+  l30?: number | null;
 }
 
 export interface Dashboard {
@@ -33,6 +39,8 @@ export interface Dashboard {
     lastYtd: number;
     recentLaunch: number;
     priorLaunch: number;
+    recentListeners?: number | null; // first-week listeners, avg. of the last 4 episodes
+    priorListeners?: number | null;
     bots30: number;
     botsAll: number;
     appleRating: number | null;

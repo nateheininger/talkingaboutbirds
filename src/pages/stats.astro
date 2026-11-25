@@ -36,6 +36,9 @@ if (d) {
       { label: 'Downloads, last 30 days', value: fmt(h.last30), note: `${change(h.last30, h.prior30)} vs. prior 30 days` },
       { label: `${h.year} so far`, value: fmt(h.ytd), note: `${change(h.ytd, h.lastYtd)} vs. this point in ${h.year - 1}` },
       { label: 'First-week downloads, avg. of last 4 episodes', value: fmt(h.recentLaunch), note: `${change(h.recentLaunch, h.priorLaunch)} vs. the 4 before` },
+      ...(h.recentListeners != null && h.priorListeners != null
+        ? [{ label: 'First-week listeners, avg. of last 4 episodes', value: fmt(h.recentListeners), note: `${change(h.recentListeners, h.priorListeners)} vs. the 4 before` }]
+        : []),
     ],
     communityTiles: [
       { label: 'Patreon paid members', value: num(h.patreonPaid), note: h.patreonMembers != null ? `${fmt(h.patreonMembers)} members including free` : '' },
@@ -59,6 +62,7 @@ if (d) {
     launchTick: (i: number) => (i % 5 === 0 || i === launches.length - 1 ? `#${launches[i].number}` : null),
     launchAvg: Math.round(launches.reduce((t, e) => t + e.d7!, 0) / launches.length),
     recent: d.episodes.slice(0, 12),
+    hasListeners: d.episodes.slice(0, 12).some((e) => e.l1 !== undefined), // older dashboard.json files don't have them
     top,
     recentMonths,
     period: `${monthName(d.period.from, 'short')} to ${monthName(d.period.to, 'short')}`,
@@ -219,7 +223,17 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
               <div class="table-scroll">
                 <table class="data">
                   <thead>
-                    <tr><th>Episode</th><th>Released</th><th>24 hours</th><th>3 days</th><th>7 days</th><th>30 days</th><th>Total</th></tr>
+                    {view.hasListeners ? (
+                      <>
+                        <tr>
+                          <th rowspan="2" class="bottom">Episode</th><th rowspan="2" class="bottom">Released</th>
+                          <th colspan="5" class="group">Downloads</th><th colspan="2" class="group split">Listeners</th>
+                        </tr>
+                        <tr><th>24 hours</th><th>3 days</th><th>7 days</th><th>30 days</th><th>Total</th><th class="split">24 hours</th><th>7 days</th></tr>
+                      </>
+                    ) : (
+                      <tr><th>Episode</th><th>Released</th><th>24 hours</th><th>3 days</th><th>7 days</th><th>30 days</th><th>Total</th></tr>
+                    )}
                   </thead>
                   <tbody>
                     {view.recent.map((e) => (
@@ -228,12 +242,19 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
                         <td>{shortDate(e.release)}</td>
                         <td>{n(e.d1)}</td><td>{n(e.d3)}</td><td>{n(e.d7)}</td><td>{n(e.d30)}</td>
                         <td><strong>{fmt(e.total)}</strong></td>
+                        {view.hasListeners && <><td class="split">{n(e.l1 ?? null)}</td><td>{n(e.l7 ?? null)}</td></>}
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
               <p class="muted fine">Counted from the moment each episode was released, the same way OP3 and the podcast apps measure launches. “…” means that window hasn’t finished yet.</p>
+              {view.hasListeners && (
+                <p class="muted fine">
+                  Listeners count each internet connection once per episode. Downloads count once per app, so an iPhone that downloads an episode in Apple Podcasts and also streams it counts as two downloads but one listener.
+                  People sharing Wi-Fi also count as one listener, so this runs a little low.
+                </p>
+              )}
             </section>
 
             <div class="two">
@@ -486,6 +507,10 @@ const title = (e: EpisodeStat) => `#${e.number} ${e.title}`;
   .data th:first-child, .data td:first-child { text-align: left; padding-left: 0; white-space: normal; }
   @media (max-width: 520px) { .data th { white-space: normal; } }
   .data td.ep { white-space: normal; min-width: 14rem; }
+  .data th.bottom { vertical-align: bottom; }
+  .data thead tr + tr th:first-child { text-align: right; padding-left: 1rem; white-space: nowrap; }
+  .data th.group { text-align: center; padding-bottom: 0.25rem; border-bottom: 1px solid var(--line); }
+  .data .split { border-left: 1px solid var(--line); }
   .data a { color: var(--text); text-decoration: none; }
   .data a:hover { color: var(--accent-text); text-decoration: underline; }
 
